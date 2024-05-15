@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Bebas Kai';
+    src:url('fonts/BebasKai.ttf') format('truetype'),
+        url('fonts/BebasKai.otf') format('opentype');
+}
+
+@keyframes navitransition {
+    0% {color: #4746A4; opacity: 0;}
+
+    20% {color: #4746A4; opacity: 0.2;}
+
+    40% {color: #4746A4; opacity: 0.4;}
+
+    60% {color: #4746A4; opacity: 0.6;}
+
+    80% {color: #4746A4; opacity: 0.8;}
+    
+    100% {color: #4746A4; opacity: 1;}
+}
+
+.title{
+    color: #4746A4;
+    opacity: 0.5;
+}
+
+.navigation {
+    width: 100vmax;
+}
+.table_cell{
+    width: 100vmax;
+    text-align: center;
+    font-family:"Bebas Kai";
+    margin: 0%;
+    font-size:150%;
+    color: #000000;
+}
+.table_cell:hover{
+    animation-name: navitransition;
+    animation-duration: 0.4s;
+    color: #4746A4;
+}
+.navibutton{
+    text-decoration: none;
+}
+
+.navibutton:link{
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+}

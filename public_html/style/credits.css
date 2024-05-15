@@ -1,0 +1,19 @@
+
+div.credits_division{
+  position: absolute;
+  bottom: -130vmax;
+  height: auto;
+  width: 100vmax;
+  font-size: 15px;
+  font-family: "Bebas Kai";
+  background-color:#25364a ;
+  color: aliceblue;
+  padding: 15px;
+}
+
+.credits_division a:visited {
+  color: rgb(166, 110, 190);
+}
+.credits_text{
+  font-family: "Bebas Kai";
+}
