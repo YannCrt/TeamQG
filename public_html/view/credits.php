@@ -11,8 +11,7 @@
 
       <input type="submit" name="confirm" value="Confirmer">
     </form>
-  </div>
-
+  
   <br>
 <hr></hr>
   <p class = 'credits_text'>Font made from <a href="http://www.onlinewebfonts.com">Online Web Fonts</a> is licensed by CC BY 3.0</p>

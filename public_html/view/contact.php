@@ -4,7 +4,7 @@
 <div class="signin"> 
  <div class="content"> 
     <h2>Contact</h2>
-    <h3>Association:</h3>
+    <h3>TeamQG:</h3>
     <p>Mail:teamqgcie@gmail.com
       <br>
       Nom de l'association:Team Qg

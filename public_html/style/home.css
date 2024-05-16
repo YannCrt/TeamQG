@@ -102,8 +102,9 @@ body {
     font-family: "Bebas Kai";
     font-size: 400%;
     background-color: #5c7d9e99;
-    color: #ffffff89;
+    color: #fff8f889;
     margin-bottom: 10%;
+    border-radius: 20px;
 }
 /*////////*/
 .mask_color:hover{
