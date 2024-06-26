@@ -1,7 +1,7 @@
 <?php
-include "$root/model/competitionsHandler.php";
+include "$racine/model/competitionsHandler.php";
 
-include "$root/view/header.php";
-include "$root/view/competitionSignup.php";
-include "$root/view/credits.php";
+include "$racine/view/header.php";
+include "$racine/view/competitionSignup.php";
+include "$racine/view/credits.php";
 ?>

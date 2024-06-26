@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Procédures
 --
-CREATE DEFINER=`id21651260_teamqg`@`%` PROCEDURE `routine1` (INOUT `eid` INT)   SELECT * 
+CREATE DEFINER=`teamqg`@`%` PROCEDURE `routine1` (INOUT `eid` INT)   SELECT * 
 FROM inscriptionevent
 WHERE idEvent = eid$$
 
@@ -37,6 +37,16 @@ DELIMITER ;
 -- Structure de la table `assomembers`
 --
 
+CREATE TABLE utilisateurs (
+   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   prenom VARCHAR(50) NOT NULL,
+   nom VARCHAR(50) NOT NULL,
+   pseudo VARCHAR(50) DEFAULT '',
+   mdp VARCHAR(255) DEFAULT '',
+   mail VARCHAR(50) NOT NULL
+);
+
+
 CREATE TABLE `assomembers` (
   `id` int(11) NOT NULL,
   `nom` varchar(50) DEFAULT NULL,
@@ -44,6 +54,12 @@ CREATE TABLE `assomembers` (
   `imagefile` varchar(150) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE TABLE `utilisateur` (
+  `id` varchar(150) NOT NULL PRIMARY KEY,
+  `pseudo` varchar(50) DEFAULT NULL,
+  `mdp` varchar(50) DEFAULT NULL
+  FOREIGN KEY (id) REFERENCES assomembers(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Déchargement des données de la table `assomembers`
 --
@@ -338,3 +354,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

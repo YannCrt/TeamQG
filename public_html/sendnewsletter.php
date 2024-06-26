@@ -22,10 +22,10 @@ echo "<p>Welcome $user.</p>";
 echo "<p>Congratulation, you are into the system.</p>";
 
 
-$root = dirname(__FILE__);
-require "$root/PHPMailer/src/Exception.php";
-require "$root/PHPMailer/src/PHPMailer.php";
-require "$root/PHPMailer/src/SMTP.php";
+$racine = dirname(__FILE__);
+require "$racine/PHPMailer/src/Exception.php";
+require "$racine/PHPMailer/src/PHPMailer.php";
+require "$racine/PHPMailer/src/SMTP.php";
 
 function DBconnection() {
     $login = "id21651260_teamqg";

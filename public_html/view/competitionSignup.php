@@ -29,7 +29,7 @@ if (isset($_GET['show_form']) && isset($_GET['form_name'])){
     <input type="text" id='NomInput' name='registration[lastname]' required placeholder ='Nom'>   
    </div> 
    <div class="inputBox"> 
-    <input type="text" id ='PrenomInput' name='registration[name]' required placeholder = 'Prénom'> 
+    <input type="text" id ='PrenomInput' name='registration[name]' required placeholder = 'prenom'> 
    </div>
    <div class="inputBox"> 
     <input type="text" id ='EmailInput' name='registration[email]' required placeholder = 'Email'> 

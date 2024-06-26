@@ -4,7 +4,7 @@
 <div class="signin"> 
  <div class="content"> 
     <h2>Contact</h2>
-    <h3>TeamQG:</h3>
+    <h3>Association:</h3>
     <p>Mail:teamqgcie@gmail.com
       <br>
       Nom de l'association:Team Qg
@@ -14,11 +14,11 @@
       Numéro de téléphone: +33 6 65 41 57 79
     </p>
     <h3>Développeurs:</h3>
-    <p>Kheda,Mail: khedab838@gmail.com <a href='https://www.instagram.com/maskkaa_hyena/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$origin/assets/instagram.png";?>></a>
+    <p>Kheda,Mail: khedab838@gmail.com <a href='https://www.instagram.com/maskkaa_hyena/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$racine/assets/instagram.png";?>></a>
    <br />
-   Chris,Mail: chris.aghayere@gmail.com <a href='https://www.instagram.com/skxlxtonboi/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$origin/assets/instagram.png";?>></a>
+   Chris,Mail: chris.aghayere@gmail.com <a href='https://www.instagram.com/skxlxtonboi/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$racine/assets/instagram.png";?>></a>
    <br>
-   Bastien,Mail : bastien7724@gmail.com <a href='https://www.instagram.com/_bastoine_/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$origin/assets/instagram.png";?>></a>
+   Bastien,Mail : bastien7724@gmail.com <a href='https://www.instagram.com/_bastoine_/' target="_blank" rel="noreferrer noopener" ><img class='instagram' src = <?php echo"$racine/assets/instagram.png";?>></a>
    </p>
    <h2 id='Information'>Information</h2>
    <p>Vos informations seront utilisées dans le seul but de pouvoir vérifier 

@@ -10,6 +10,8 @@
     url("fonts/3a137c528c2902708ed78ac8a6af72fb.svg#CCSignLanguage Bold") format("svg"); /* iOS 4.1- */
   }
 
+
+
   @keyframes memberAnimation {
     0% {opacity: 0.5};
     10% {opacity: 0.58};
@@ -41,11 +43,20 @@
 }
 
 body {
-    background-image: url('../assets/navibackgroundwhite.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    background: repeating-linear-gradient(
+        0deg,
+        #0E0D0E 25%,
+        #0E0D0E 50%,
+        #171819 50%,
+        #171819 75%
+      );
+    background-size: 10px 10px;
+    height: 100vh;
+    font-family: 'Barlow', sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
 .confirmation_div{
@@ -53,12 +64,19 @@ body {
     width: 100vmax;
     height: 100vmin;
 }
-.confirmation_page{
+
+.confirmation_div {
+    width: 100vmax;
+    height: 100vmin;
+    float: left;
+}
+
+.confirmation_page {
     float: left;
     display: flex;
     width: 100%;
     height: 30%;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
     font-family: "Bebas Kai";
     font-size: 5vmax;
     color: #ffffff;
@@ -67,58 +85,60 @@ body {
     align-items: center;
     margin-top: 10%;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.home{
+.home {
     float: left;
     width: 100vmax;
     height: 10%;
     margin-top: 10%;
     margin-bottom: 20%;
     text-align: center;
-    /*background-color: #ccdef6;*/
 }
-.mask_color{
+.mask_color {
     height: 100%;
     background-color: #2c2c2c;
     opacity: 0.6;
     transition: opacity 0.5s;
 }
-.members{
+.mask_color:hover {
+    opacity: 0;
+}
+.members {
     float: left;
     width: 100vmax;
 }
-.memberstitle{
+.memberstitle {
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vmax;
-    height:11vh;
+    height: 11vh;
     font-family: "Bebas Kai";
     font-size: 400%;
-    background-color: #5c7d9e99;
-    color: #fff8f889;
+    background-color: rgba(92, 125, 158, 0.6); /* Slightly transparent blue */
+    color: rgba(255, 248, 248, 0.6);
     margin-bottom: 10%;
     border-radius: 20px;
 }
+
 /*////////*/
 .mask_color:hover{
     opacity: 0;
 }
-.member_box{
+.member_box {
     width: 60vmax;
-    /*height: auto;*/
-    position:fixed;
+    position: fixed;
     top: 20%;
     left: 20%;
-    background-color: #000000e3;
-    box-shadow: 2% 1% 10% #1A1F09;
-    pointer-events: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    box-shadow: 2% 1% 10% rgba(26, 31, 9, 0.8);
 }
 .box_image{
     float: left;
@@ -126,8 +146,8 @@ body {
     height: 10%;
     pointer-events: none;
 }
-.member_name{
-    color:#cadef6;
+.member_name {
+    color: #cadef6;
     font-size: 2vmax;
     margin: 3%;
     text-align: center;
@@ -137,6 +157,7 @@ body {
     float: left;
     width: 10%;
 }
+
 .member_description{
     float: center;
     width: 100%;
@@ -152,6 +173,7 @@ body {
     text-align: center;
     font-weight: bolder;
 }
+
 .close {
     position: absolute;
     right: 3vmax;
@@ -322,4 +344,223 @@ video::-webkit-media-controls {
     top: 120%;
     line-height: 1.5;
     padding-left: 30px;
+}
+
+.container {
+    background-color: rgb(162, 0, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    height: 450px; /* Ajoutez une hauteur fixe */
+}
+
+.container-profil {
+    background-color: rgb(162, 0, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    height: auto; /* Ajoutez une hauteur fixe */
+}
+
+.container-inscription {
+    background-color: rgb(162, 0, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    height: auto; /* Ajoutez une hauteur fixe */
+}
+
+.login-btn-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    margin-top: 15px; /* Ajoute de l'espace au-dessus du bouton */
+    margin-bottom: 15px; /* Ajoute de l'espace en dessous du bouton */
+}
+
+#inscription {
+    justify-content: center;
+}
+
+.login-btn {
+    width: 300px; /* Ajustez la largeur du bouton pour remplir la largeur du formulaire */
+    text-align: center; /* Aligner le texte au centre */
+}
+
+#connexion {
+    justify-content: center;
+    text-align: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-control {
+    text-align: center;
+    width: 450px;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #5f009e; /* Fond orange */
+    color: white; /* Texte en blanc */
+}
+
+#inscription {
+    background-color: rgb(162, 0, 255); /* Bouton orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du bouton */
+    align-self: flex-end; /* Aligner le bouton au bas du formulaire */
+}
+
+.container-inscription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-inscription {
+    margin: 20px auto; /* Marge automatique sur les côtés */
+    display: block; /* Assure que le bouton prend toute la largeur disponible */
+}
+.btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du bouton */
+}
+
+.btn-primary {
+    background-color: #000000; /* Bouton orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: black; /* Changement de couleur au survol */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Ajoute de l'espace au-dessus des boutons */
+}
+
+.btn-profil {
+    margin: 0 10px; /* Marge sur les côtés des boutons */
+    height: auto; /* Hauteur uniforme pour tous les boutons */
+}
+
+.btn-primary {
+    background-color: rgb(81, 1, 185); /* Bouton orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: rgb(66, 1, 151); /* Changement de couleur au survol */
+}
+
+.confirmation-box {
+    display: none;
+    position: fixed;
+    top: 50%; /* Décalage vertical au milieu */
+    left: 50%; /* Décalage horizontal au milieu */
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 9999;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.confirmation-content h2 {
+    margin-bottom: 20px;
+    color: white; /* Texte en blanc */
+}
+
+.confirmation-content {
+    background-color: rgb(162, 0, 255); /* Fond orange */
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex; /* Affichage en colonne */
+    flex-direction: column; /* Les éléments sont disposés en colonne */
+    align-items: center; /* Centrer horizontalement */
+}
+
+.confirmation-content button {
+    background-color: rgb(162, 0, 255); /* Bouton blanc */
+    color: rgb(96, 2, 151); /* Texte orange */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espace entre les boutons et le texte */
+}
+
+.confirmation-content .button-container {
+    display: flex; /* Affichage en ligne */
+    justify-content: space-around; /* Espacement équitable entre les boutons */
+    width: 100%; /* Utiliser toute la largeur */
+}
+
+#Oui {
+    background-color: rgb(81, 1, 185);
+    color: white;
+}
+
+#Non {
+    background-color: rgb(81, 1, 185);
+    color: white;
 }

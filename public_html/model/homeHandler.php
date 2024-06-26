@@ -1,5 +1,5 @@
 <?php 
-include "$root/model/membersClass.php";
+include "$racine/model/membersClass.php";
 
 $members = new CreateMembers;
 

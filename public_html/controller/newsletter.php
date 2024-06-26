@@ -2,11 +2,11 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require "$root/PHPMailer/src/Exception.php";
-require "$root/PHPMailer/src/PHPMailer.php";
-require "$root/PHPMailer/src/SMTP.php";
+require "$racine/PHPMailer/src/Exception.php";
+require "$racine/PHPMailer/src/PHPMailer.php";
+require "$racine/PHPMailer/src/SMTP.php";
 
-require "$root/model/newsletterClass.php";
+require "$racine/model/newsletterClass.php";
 
 $nom = $_POST['nom'];
 $prenom =$_POST['prenom'];
@@ -43,7 +43,7 @@ $mailToSend->send();
     return;
 }
 
-include "$root/view/header.php";
-include "$root/view/confirmationView.php";
-include "$root/view/credits.php";
+include "$racine/view/header.php";
+include "$racine/view/confirmationView.php";
+include "$racine/view/credits.php";
 ?>

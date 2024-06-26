@@ -1,8 +1,8 @@
 <?php
 
-function controllerhub($action) {
+function controleurPrincipal($action){
     $Actions = array();
-    $Actions["default"]="home.php";
+    $Actions["defaut"]="home.php";
     $Actions["home"]="home.php";
 
     $Actions["competitions"]="competitions.php";
@@ -11,6 +11,7 @@ function controllerhub($action) {
     
     $Actions['contact'] = "contact.php";
     $Actions['connexion'] = "connexion.php";
+    $Actions['suppression'] = "suppression.php";
     $Actions["deconnexion"] = "deconnexion.php";
     $Actions['inscription'] = "inscription.php";
     $Actions["updProfil"] = "updProfil.php";
@@ -18,13 +19,15 @@ function controllerhub($action) {
     $Actions['events'] = "events.php";
     $Actions['maintenance'] = "maintenance.php";
     $Actions['newsletter'] = "newsletter.php";
+
     
-    if (array_key_exists($action, $Actions)) {
+    if (array_key_exists ( $action , $Actions )){
         return $Actions[$action];
     }
-    else {
-        return $Actions["default"];
+    else{
+        return $Actions["defaut"];
     }
+
 }
 
 ?>

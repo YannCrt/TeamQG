@@ -12,7 +12,7 @@
         
         if ($currentdate <= $comp["date"]){
             $db = true;
-             include "$root/view/singlecompetition.php";
+             include "$racine/view/singlecompetition.php";
         }
     }
 
@@ -23,7 +23,7 @@
             "description" =>"",
             "location" => ""
         );
-        include "$root/view/nocompetition.php";
+        include "$racine/view/nocompetition.php";
     }
 
     ?>

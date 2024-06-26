@@ -1,8 +1,8 @@
 <?php 
-include "$root/model/homeHandler.php";
+include "$racine/model/homeHandler.php";
 
-include "$root/view/header.php";
-include "$root/view/contact.php";
-include "$root/view/credits.php";
+include "$racine/view/header.php";
+include "$racine/view/contact.php";
+include "$racine/view/credits.php";
 
 ?>

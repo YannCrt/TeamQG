@@ -2,12 +2,12 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require "$root/PHPMailer/src/Exception.php";
-require "$root/PHPMailer/src/PHPMailer.php";
-require "$root/PHPMailer/src/SMTP.php";
+require "$racine/PHPMailer/src/Exception.php";
+require "$racine/PHPMailer/src/PHPMailer.php";
+require "$racine/PHPMailer/src/SMTP.php";
 
-include "$root/model/competitionsHandler.php";
-include "$root/model/inscriptionClass.php";
+include "$racine/model/competitionsHandler.php";
+include "$racine/model/inscriptionClass.php";
 
 $registration = new Inscription();
 
@@ -52,7 +52,7 @@ $mailToSend->send();
 
 $error = $registration->Register($name, $lastname, $age,$infos,$id,$email,$origin);
 
-include "$root/view/header.php";
-include "$root/view/confirmationView.php";
-include "$root/view/credits.php";
+include "$racine/view/header.php";
+include "$racine/view/confirmationView.php";
+include "$racine/view/credits.php";
 ?>
