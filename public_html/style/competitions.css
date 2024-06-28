@@ -97,7 +97,9 @@
   font-style: italic;
   text-align: center;
   font-size: 1vmax;
+
   color: #ffffff;
+
 }
 .competition_close_button{
   float: left;
@@ -411,10 +413,8 @@ section .signin .content .form .radio input[type="radio"] + label {
   font-size: 1em;
   color: #fff;
   display: block;
+
 }
-
-
-
 
 .bgblue {
   background: linear-gradient(#000000f5, #000000, #00000098,#000000); /* Neon cyan to neon magenta */
@@ -431,7 +431,5 @@ section .signin .content .form .radio input[type="radio"] + label {
   padding: 1.5rem;
   border-radius: 1.2rem;
 }
-
-
 
 
