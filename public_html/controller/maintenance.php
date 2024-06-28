@@ -1,4 +1,0 @@
-<?php 
-
-echo "<p>LE SITE EST EN MAINTENANCE VEUILLEZ PATIENTER</p>";
-?>
