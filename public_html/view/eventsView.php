@@ -10,12 +10,12 @@
 
         if ($currentdate <= $event["date"]){
             $isevent = true;
-            include "$root/view/singleEvent.php";
+            include "$racine/view/singleEvent.php";
         }
     }
 
     if(!$isevent){
-        include "$root/view/noEvent.php";
+        include "$racine/view/noEvent.php";
     }
 ?>
 </div>

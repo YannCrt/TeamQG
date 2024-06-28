@@ -3,7 +3,7 @@
 function DBconnection() {
     $login = "root"; //id21651260_teamqg
     $mdp = ""; //tGeMaq!96
-    $bd = "id21651260_teamqg";
+    $bd = "teamqg";
     $serveur = "localhost";
 
     try {

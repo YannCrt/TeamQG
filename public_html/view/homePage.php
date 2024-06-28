@@ -1,5 +1,5 @@
 <div class = 'home'>
-<?php include "$root/view/homevideo.php";?>
+<?php include "$racine/view/homevideo.php";?>
 <br>
 <div class='home_description'>
           <h2>À propos</h2>
@@ -15,6 +15,6 @@
 </div>
 <div class = 'allmembers'>
 <?php
-include "$root/view/members.php";
+include "$racine/view/members.php";
 ?>
 </div>

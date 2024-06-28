@@ -1,16 +1,21 @@
 <?php
-$root = dirname(__FILE__);
-$origin = "..";
+include "getRacine.php";
+include "$racine/controller/controleurPrincipal.php";
+include_once "$racine/model/authentification.php"; // pour pouvoir utiliser isLoggedOn()
 
-include("$root/model/handler.php");
-include ("$root/model/databaselogin.php");
-if (isset($_GET["_"])) {
-    $action = $_GET["_"];
+
+
+if (isset($_GET["action"])){
+    $action = $_GET["action"];
 }
-else {
-    $action = "default";
+else{
+    
+    $action = "defaut";
 }
 
-$file = controllerhub($action);
-include "$root/controller/$file";
+$fichier = controleurPrincipal($action);
+include "$racine/controller/$fichier";
+
+
 ?>
+     

@@ -1,52 +1,72 @@
-@font-face {
-    font-family: 'Bebas Kai';
-    src:url('fonts/BebasKai.ttf') format('truetype'),
-        url('fonts/BebasKai.otf') format('opentype');
+html, body {
+    margin: 0;
+    height: 100%;
+    padding: 0;
 }
 
-@keyframes navitransition {
-    0% {color: #4746A4; opacity: 0;}
-
-    20% {color: #4746A4; opacity: 0.2;}
-
-    40% {color: #4746A4; opacity: 0.4;}
-
-    60% {color: #4746A4; opacity: 0.6;}
-
-    80% {color: #4746A4; opacity: 0.8;}
-    
-    100% {color: #4746A4; opacity: 1;}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.title{
-    color: #4746A4;
-    opacity: 0.5;
+.effects {
+    display: none;
+}
+
+.header {
+    background-color: #113;
 }
 
 .navigation {
-    width: 100vmax;
+    width: 100%;
+    table-layout: fixed;
 }
-.table_cell{
-    width: 100vmax;
+
+.table_cell {
     text-align: center;
-    font-family:"Bebas Kai";
-    margin: 0%;
-    font-size:150%;
-    color: #000000;
-}
-.table_cell:hover{
-    animation-name: navitransition;
-    animation-duration: 0.4s;
-    color: #4746A4;
-}
-.navibutton{
-    text-decoration: none;
+    padding: 1rem;
 }
 
-.navibutton:link{
+.navibutton {
+    position: relative;
+    display: inline-block; /* Assurez-vous que le bouton est inline-block pour que le SVG puisse l'entourer */
+    padding: 2rem; /* Ajoutez un padding pour que le SVG ne soit pas collé au texte */
+    color: #08F;
+    font-weight: bold;
     text-decoration: none;
+    text-transform: uppercase;
+    transition: color .3s;
 }
 
-a:visited{
-    color: black;
+.navibutton:hover,
+.navibutton.is-active {
+    color: #3AE;
 }
+
+.svg-border {
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    stroke-dashoffset: 101;
+    stroke-dasharray: 101 101;
+    stroke-width: 4px;
+    top: 0;
+    transition: all .5s, stroke .3s;
+}
+
+.navibutton:hover .svg-border,
+.navibutton.is-active .svg-border {
+    stroke-dashoffset: 202;
+}
+
+.header .navibutton > .svg-border:first-child {
+    filter: blur(4px);
+    stroke-width: 5px;
+}
+
+.header .navibutton > .svg-border {
+    filter: url(#displacementFilter);
+    margin-left: -3px;
+    margin-top: -2px;
+    stroke-width:5px;
+}
+

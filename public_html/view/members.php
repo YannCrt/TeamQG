@@ -1,26 +1,26 @@
 <?php
 $objects = $members->getArray();
-echo"<div class ='space_member'></div>"; 
+echo"<div class='space_member'></div>"; 
 
- echo"<div class ='members'>"; 
+echo"<div class='members'>"; 
 foreach($objects as $key => $object){
     $Name = $object->getName();
     $Description = $object->getDescription();
-    $imagepath = $object->getImagePath();
+    $imagepath = "assets/membersimages/" . $object->getImagePath(); // Assurez-vous que le chemin est correct
 
-    include "$root/view/previewPresentation.php";
+    include "$racine/view/previewPresentation.php";
 }
 
 echo"</div>";
-echo"<div class ='space_member'></div>"; 
-echo"<div class ='boxes'>";
+echo"<div class='space_member'></div>"; 
+echo"<div class='boxes'>";
 
 foreach($objects as $key => $object){
     $Name = $object->getName();
     $Description = $object->getDescription();
-    $imagepath = $object->getImagePath();
+    $imagepath = "assets/membersimages/" . $object->getImagePath(); // Assurez-vous que le chemin est correct
 
-    include "$root/view/presentationbox.php";
+    include "$racine/view/presentationbox.php";
 }
 echo"</div>";
 ?>

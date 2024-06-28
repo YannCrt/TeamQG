@@ -10,7 +10,7 @@ class CreateMembers{
 
                 $line = $req->fetch(PDO::FETCH_ASSOC);
                 while ($line) {
-                    $this->members[] = new member($line["nom"], $line["description"], $line["imagefile"]);
+                    $this->members[] = new member($line["nom"], $line["description"], "assets/membersimages/" . $line["imagefile"]); // Chemin relatif
                     $line = $req->fetch(PDO::FETCH_ASSOC);
                 }
             } catch (PDOException $e) {
@@ -23,6 +23,7 @@ class CreateMembers{
         return $this->members;
     }
 }
+
 class member{
     private $name;
     private $description;

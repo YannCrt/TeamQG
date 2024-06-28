@@ -1,5 +1,5 @@
 <?php 
-include "$root/model/competitionsClass.php";
+include "$racine/model/competitionsClass.php";
 
 $competitions = new CreateCompetition;
 ?>

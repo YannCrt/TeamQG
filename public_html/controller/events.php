@@ -1,7 +1,7 @@
 <?php
-include "$root/model/events_handler.php";
+include "$racine/model/events_handler.php";
 
-include "$root/view/header.php";
-include "$root/view/eventsView.php";
-include "$root/view/credits.php";
+include "$racine/view/header.php";
+include "$racine/view/eventsView.php";
+include "$racine/view/credits.php";
 ?>
