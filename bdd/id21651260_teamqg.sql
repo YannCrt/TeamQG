@@ -45,8 +45,7 @@ CREATE TABLE utilisateurs (
    pseudo VARCHAR(50) DEFAULT '',
    mdp VARCHAR(255) DEFAULT '',
    mail VARCHAR(50) NOT NULL
-);
-
+); ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `assomembers` (
   `id` int(11) NOT NULL,
@@ -108,20 +107,11 @@ INSERT INTO `events` (`idEvent`, `nom`, `lieu`, `date_event`, `description`, `im
 -- Structure de la table `inscription`
 --
 
-CREATE TABLE `inscription` (
-  `idInscription` int(11) NOT NULL,
-  `nom` varchar(50) DEFAULT NULL,
-  `prenom` varchar(50) DEFAULT NULL,
-  `email` varchar(150) NOT NULL,
-  `age` int(11) DEFAULT NULL,
-  `autreinformations` varchar(100) DEFAULT 'Non Renseigné'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 --
 -- Déchargement des données de la table `inscription`
 --
 
-INSERT INTO `inscription` (`idInscription`, `nom`, `prenom`, `email`, `age`, `autreinformations`) VALUES
+/*INSERT INTO `inscription` (`idInscription`, `nom`, `prenom`, `email`, `age`, `autreinformations`) VALUES
 (1, 'Surasri', 'Jean-Paul', 'jean-paul.surasri@student-cs.fr', 23, NULL),
 (3, 'Goutaudier', 'Tess', 'tess.gtdr@gmail.com', 16, '3'),
 (4, 'Vincent', 'Nellia', 'n.vincentmathiot@gmail.com', 16, NULL),
@@ -135,7 +125,7 @@ INSERT INTO `inscription` (`idInscription`, `nom`, `prenom`, `email`, `age`, `au
 (18, 'Yamamoto', 'Yuki', 'yymmt3.waste@gmail.com', 25, NULL),
 (19, 'Kiminou', 'Jessica', 'Jessica.kiminou@gmail.com', 23, NULL),
 (47, 'kris', 'kris', 'chris.aghayere@gmail.com', 19, 'annees = 3 '),
-(48, 'Jdizbd', 'Bskdbd', 'Bekejd .kfoebd@(38/!:', 37, '');
+(48, 'Jdizbd', 'Bskdbd', 'Bekejd .kfoebd@(38/!:', 37, '');*/
 
 -- --------------------------------------------------------
 
@@ -222,6 +212,14 @@ INSERT INTO `socialpost` (`id`, `origin`) VALUES
 ('18109097596362153', 'instagram'),
 ('18006326471514011', 'instagram'),
 ('18014024036159196', 'instagram');
+
+CREATE TABLE video (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255) NOT NULL,
+    description TEXT,
+    fichier LONGBLOB NOT NULL,
+    datee DATE
+);
 
 --
 -- Index pour les tables déchargées
@@ -352,11 +350,4 @@ COMMIT;
 
 
 
-CREATE TABLE video (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    titre VARCHAR(255) NOT NULL,
-    description TEXT,
-    fichier LONGBLOB NOT NULL,
-    datee DATE
-);
 

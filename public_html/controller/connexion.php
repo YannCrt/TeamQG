@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         $_SESSION['error_message'] = "Veuillez remplir tous les champs.";
-        header("Location: /?action=co   nnexion");
+        header("Location: /?action=connexion");
         exit();
     }
 } else {

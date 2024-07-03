@@ -13,7 +13,8 @@ body {
 }
 
 .header {
-    background-color: #113;
+    background: -webkit-linear-gradient(59deg, #420add, #7a4cf8);
+    background:  linear-gradient(59deg, #420add, #6b39f5);
 }
 
 .navigation {
@@ -30,7 +31,7 @@ body {
     position: relative;
     display: inline-block; /* Assurez-vous que le bouton est inline-block pour que le SVG puisse l'entourer */
     padding: 2rem; /* Ajoutez un padding pour que le SVG ne soit pas collé au texte */
-    color: #08F;
+    color: #ffffff;
     font-weight: bold;
     text-decoration: none;
     text-transform: uppercase;
@@ -39,7 +40,8 @@ body {
 
 .navibutton:hover,
 .navibutton.is-active {
-    color: #3AE;
+    color: rgb(162, 0, 255);
+    text-decoration: none;
 }
 
 .svg-border {

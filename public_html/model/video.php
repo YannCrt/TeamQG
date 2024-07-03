@@ -2,19 +2,17 @@
 
 include_once "databaselogin.php";
 
-function getVideo() {
-    $resultat = array(); // tableau pour stocker les utilisateurs
-
+function getVideos() {
     try {
-        $cnx = DBconnection(); // fonction pour se connecter à la base
-        $req = $cnx->prepare("SELECT * FROM video;"); // requête pour selectionner les utilisateurs
-        $req->execute();  // fonction php pour executer la requête
+        $cnx = DBconnection();
+        $req = $cnx->prepare("SELECT * FROM video;");
+        $req->execute();
 
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC); // fetch permet de recuperer la ligne suivante d'un jeu de résultat PDO
+        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage(); 
+        print "Erreur !: " . $e->getMessage();
         die();
-    } 
+    }
     return $resultat;
 }
 
@@ -127,7 +125,7 @@ function updDescriptionVideo($id,$description) {
 
         $req = $cnx->prepare("update video set description=:description where id=:id");
         $req->bindValue(':id', $id, PDO::PARAM_STR);
-        $req->bindValue(':description', $titre, PDO::PARAM_STR);
+        $req->bindValue(':description', $description, PDO::PARAM_STR);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -144,7 +142,7 @@ function updDateVideo($id,$datee) {
 
         $req = $cnx->prepare("update video set datee=:datee where id=:id");
         $req->bindValue(':id', $id, PDO::PARAM_STR);
-        $req->bindValue(':datee', $titre, PDO::PARAM_STR);
+        $req->bindValue(':datee', $datee, PDO::PARAM_STR);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -161,7 +159,7 @@ function updFichierVideo($id,$fichier) {
 
         $req = $cnx->prepare("update video set fichier=:fichier where id=:id");
         $req->bindValue(':id', $id, PDO::PARAM_STR);
-        $req->bindValue(':fichier', $titre, PDO::PARAM_STR);
+        $req->bindValue(':fichier', $fichier, PDO::PARAM_STR);
 
         $resultat = $req->execute();
     } catch (PDOException $e) {
@@ -171,15 +169,14 @@ function updFichierVideo($id,$fichier) {
     return $resultat;
 }
 
-function addVideo($id, $titre, $description, $fichier, $datee) {
+function addVideo($titre, $description, $fichier, $datee) {
     try {
         $cnx = DBconnection();
 
-        $req = $cnx->prepare('INSERT INTO video (id, titre, description, fichier, datee) VALUES (:id, :titre, :description, :fichier, :datee)');
-        $req->bindValue(':id', $prenom, PDO::PARAM_STR);
+        $req = $cnx->prepare('INSERT INTO video (titre, description, fichier, datee) VALUES (:titre, :description, :fichier, :datee)');
         $req->bindValue(':titre', $titre, PDO::PARAM_STR);
-        $req->bindValue(':description', $pseudo, PDO::PARAM_STR);
-        $req->bindValue(':fichier', $fichier, PDO::PARAM_STR);
+        $req->bindValue(':description', $description, PDO::PARAM_STR);
+        $req->bindValue(':fichier', $fichier, PDO::PARAM_LOB); // Changed to PDO::PARAM_LOB for LONGBLOB
         $req->bindValue(':datee', $datee, PDO::PARAM_STR);
 
         $resultat = $req->execute();
@@ -188,35 +185,24 @@ function addVideo($id, $titre, $description, $fichier, $datee) {
         } else {
             // Si l'exécution échoue, on log les erreurs possibles
             $errorInfo = $req->errorInfo();
-            print "Erreur d'insertion: " . $errorInfo[2];
-            return false;
+            throw new Exception("Erreur d'insertion: " . $errorInfo[2]);
         }
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
+        throw new Exception("Erreur !: " . $e->getMessage());
     }
 }
+
 
 function deleteVideoById($id) {
     try {
         $cnx = DBconnection();
         $req = $cnx->prepare('DELETE FROM video WHERE id=:id;');
-        $req->bindValue(':id', $id, PDO::PARAM_STR);
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
         $resultat = $req->execute();
-
-        if (!isset($_SESSION)) {
-            session_start();
-        }
-
-        if (isLoggedOn() && $_SESSION["id"] == $id) {
-            logout();
-            session_destroy();
-        }
 
         return $resultat;
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage();
+        print "Erreur !: " . $e->getMessage();
         die();
     }
-
 }

@@ -22,7 +22,8 @@ function controleurPrincipal($action){
 
     $Actions['addVideo'] = "addVideo.php";
     $Actions['updVideo'] = "updVideo.php";
-    $Actions['suppressionVideo'] = "suppressionVideo";
+    $Actions['video'] = "video.php";
+    $Actions['suppressionVideo'] = "suppressionVideo.php";
 
     
     if (array_key_exists ( $action , $Actions )){
