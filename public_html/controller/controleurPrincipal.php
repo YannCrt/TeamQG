@@ -20,6 +20,10 @@ function controleurPrincipal($action){
     $Actions['maintenance'] = "maintenance.php";
     $Actions['newsletter'] = "newsletter.php";
 
+    $Actions['addVideo'] = "addVideo.php";
+    $Actions['updVideo'] = "updVideo.php";
+    $Actions['suppressionVideo'] = "suppressionVideo";
+
     
     if (array_key_exists ( $action , $Actions )){
         return $Actions[$action];

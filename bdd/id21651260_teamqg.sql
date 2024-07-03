@@ -25,10 +25,11 @@ DELIMITER $$
 --
 -- Procédures
 --
+/*
 CREATE DEFINER=`teamqg`@`%` PROCEDURE `routine1` (INOUT `eid` INT)   SELECT * 
 FROM inscriptionevent
 WHERE idEvent = eid$$
-
+*/
 DELIMITER ;
 
 -- --------------------------------------------------------
@@ -347,4 +348,15 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+CREATE TABLE video (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titre VARCHAR(255) NOT NULL,
+    description TEXT,
+    fichier LONGBLOB NOT NULL,
+    datee DATE
+);
 
