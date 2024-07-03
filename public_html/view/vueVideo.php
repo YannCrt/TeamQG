@@ -19,8 +19,10 @@
                 <!-- Formulaire de suppression -->
                 <form action="./?action=suppressionVideo" method="POST">
                     <input type="hidden" name="id" value="<?php echo $video['id']; ?>">
-                    <button type="supprimer" class="btn btn-primary btn-profil" id="SupprimerVideo" value="Supprimer">Supprimer</button>
+                    <button type="submit" class="btn btn-primary btn-profil" name="SupprimerVideo" value="Supprimer">Supprimer</button>
                 </form>
+                <!-- Lien pour modifier la vidéo -->
+                <button class="btn btn-primary btn-profil"><a href="./?action=updVideo&id=<?php echo $video['id']; ?>">Modifier</a></button>
             </li>
         <?php endforeach; ?>
     </ul>

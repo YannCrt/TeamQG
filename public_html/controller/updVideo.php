@@ -4,48 +4,48 @@ $racine = $_SERVER['DOCUMENT_ROOT'];
 include_once "$racine/model/authentification.php";
 include_once "$racine/model/video.php";
 
-// Vérifier si l'utilisateur est connecté
+$message = ""; // Initialisez le message de succès à vide
+
 if (isLoggedOn()) {
-    // Vérifier si un ID de vidéo est passé dans l'URL
-    if (isset($_GET['id'])) {
-        $videoToEdit = getVideoById($_GET['id']);
+    if (isset($_GET['id']) && !empty($_GET['id'])) {
+        $id = $_GET['id'];
+        $video = getVideoById($id); // Fonction à implémenter pour récupérer les détails de la vidéo par son ID
 
-        // Vérifier si la vidéo à éditer existe
-        if (!$videoToEdit) {
-            echo "La vidéo spécifiée n'existe pas.";
-            exit(); // Arrêter l'exécution si la vidéo n'est pas trouvée
+        if (!$video) {
+            // Gérer le cas où la vidéo n'est pas trouvée
+            $message = "La vidéo sélectionnée n'existe pas.";
         }
+
+        if (isset($_POST["titre"]) && isset($_POST["description"])) {
+            $titre = $_POST["titre"];
+            $description = $_POST["description"];
+            
+            // Vérifier que les champs ne sont pas vides
+            if (!empty($titre) && !empty($description)) {
+                if (updVideo($id, $titre, $description)) { 
+                    header("Location: ./?action=video");// Fonction à implémenter pour mettre à jour la vidéo
+                    $message .= "Vidéo mise à jour avec succès. ";
+                } else {
+                    $message .= "Erreur lors de la mise à jour de la vidéo. ";
+                }
+            } else {
+                $message .= "Les champs Titre et Description sont obligatoires. ";
+            }
+        }
+
+        // Redirection vers la page vueUpdVideo.php avec le message
+        include_once "$racine/view/header.php";
+        include_once "$racine/view/updVideo.php";
+        include_once "$racine/view/credits.php";
+
     } else {
-        echo "ID de vidéo non spécifié.";
-        exit(); // Arrêter l'exécution si l'ID de la vidéo n'est pas passé dans l'URL
+        // Gérer le cas où l'ID de la vidéo n'est pas spécifié
+        $message = "L'identifiant de la vidéo n'est pas valide.";
+        include_once "$racine/view/header.php";
+        include_once "$racine/view/credits.php";
     }
-
-    // Traitement de la mise à jour de la vidéo si le formulaire est soumis
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST["updVideo"])) {
-        $id = $_POST['id'];
-        $titre = $_POST['titre'];
-        $description = $_POST['description'];
-        $fichier = file_get_contents($_FILES['fichier']['tmp_name']);
-        $datee = date('Y-m-d');
-
-        // Appel à la fonction pour mettre à jour la vidéo
-        if (updVideo($id, $titre, $description, $fichier, $datee)) {
-            echo "Vidéo mise à jour avec succès";
-            // Redirection vers une autre page après la mise à jour si nécessaire
-            // header("Location: ./autre_page.php");
-            // exit();
-        } else {
-            echo "Erreur lors de la mise à jour de la vidéo.";
-        }
-    }
-
-    // Inclusion de la vue pour afficher le formulaire de modification de la vidéo
-    include_once "$racine/view/header.php";
-    include_once "$racine/view/monProfil.php"; // Assurez-vous d'adapter ce chemin
-    include_once "$racine/view/credits.php";
 } else {
-    // Redirection vers la page de connexion si l'utilisateur n'est pas connecté
-    header("Location: ./?action=connexion");
-    exit();
+    include_once "$racine/view/header.php";
+    include_once "$racine/view/credits.php";
 }
 ?>

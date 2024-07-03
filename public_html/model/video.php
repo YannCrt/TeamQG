@@ -17,20 +17,18 @@ function getVideos() {
 }
 
 function getVideoById($id) {
-    $resultat = array(); 
-
     try {
         $cnx = DBconnection();
-        $req = $cnx->prepare("select * from video where id=:id;");
-        $req->bindvalue(':id', $id, PDO::PARAM_STR);
+        $req = $cnx->prepare("SELECT * FROM video WHERE id = :id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
 
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+        return $resultat;
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage();
+        print 'Erreur !: ' . $e->getMessage();
         die();
     }
-    return $resultat;
 }
 
 function getVideoByTitre($titre) {
@@ -99,6 +97,23 @@ function getVideoBydate($fichier) {
         die();
     }
     return $resultat;
+}
+
+function updVideo($id, $titre, $description) {
+    try {
+        $cnx = DBconnection();
+
+        $req = $cnx->prepare("UPDATE video SET titre = :titre, description = :description WHERE id = :id");
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
+        $req->bindValue(':description', $description, PDO::PARAM_STR);
+
+        $resultat = $req->execute();
+        return $resultat;
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
 }
 
 function updTitreVideo($id,$titre) {

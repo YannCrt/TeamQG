@@ -36,7 +36,6 @@ function getPseudoLoggedOn(){
     }
     return $ret;
 }
-
 function isLoggedOn() {
     if (!isset($_SESSION)) {
         session_start();

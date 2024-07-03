@@ -1,28 +1,22 @@
 <div class="container-inscription">
-        <?php if (!empty($msg)): ?>
-            <p class="error-message"><?php echo $msg; ?></p>
-        <?php endif; ?>
-        <form action="./?action=" method="POST">
-            <div class="form-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom"  class="form-control" name="prenom" autocomplete="off" placeholder="Prénom" required>
-            </div>
-            <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom"  class="form-control" name="nom" autocomplete="off" placeholder="Nom" required>
-            </div>
-            <div class="form-group">
-            <label for="pseudo">Pseudo</label>
-            <input type="text" id="pseudo"  class="form-control" name="pseudo" autocomplete="off" placeholder="Pseudo" required>
-            </div>
-            <div class="form-group">
-            <label for="mdp">Mot de passe</label>
-            <input type="password" id="mdp"  class="form-control" name="mdp" autocomplete="off" placeholder="Mot de passe" required>
-            </div>
-            <div class="form-group">
-            <label for="mail">Email</label>
-            <input type="email" id="mail"  class="form-control" name="mail" autocomplete="off" placeholder="Email" required>
-            </div>
-            <input class="btn btn-primary btn-inscription" type="submit" id="inscription" name="envoie" value="S'inscrire">
-        </form>
-    </div>
+    <?php if (!empty($message)): ?>
+        <p class="success-message"><?php echo $message; ?></p>
+    <?php endif; ?>
+
+    <form action="./?action=updProfil" method="POST">
+        
+    <h3>Mettre à jour mon Prenom :</h3>
+    <input type="text" name="prenom" placeholder="Nouveau prenom"/><br />
+
+    <h3>Mettre à jour mon Nom : </h3>
+    <input type="text" name="nom" placeholder="Nouveau Nom" /><br />
+
+    <h3>Mettre à jour mon Pseudo : </h3>
+    <input type="text" name="pseudo" placeholder="Nouveau pseudo" /><br />
+
+    <H3> Mettre à jour mon mot de passe :</H3>
+    <input type="password" name="mdp" placeholder="Nouveau mot de passe" /><br />
+    <input type="password" name="mdp2" placeholder="Confirmer la saisie" /><br />
+    <button class="btn btn-primary btn-profil" type="submit">Valider</button>
+    </form>
+</div>

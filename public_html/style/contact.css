@@ -1,29 +1,28 @@
 .contact {
-    width: 80vmax;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Bebas Kai";
-    flex-wrap: wrap;
-    gap: 2px;
-    margin: 0;  /* Supprime les marges qui pourraient interférer */
-    padding: 0; /* Supprime les paddings qui pourraient interférer */
+  width: 80vmax;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Bebas Kai";
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0;  /* Supprime les marges qui pourraient interférer */
+  padding: 0; /* Supprime les paddings qui pourraient interférer */
 }
 
 .bgblue {
-    background: linear-gradient(#000000f5, #000000, #00000098,#000000); /* Neon cyan to neon magenta */
-    padding: 10px;
-    border-radius: 1.2rem;
-    box-shadow: 0px 0px 20px 5px darkviolet ;
-    max-width: 500px;
-  }
-  
-  .card {
-    font-size: 1rem;
-    color: white; /* Neon yellow */
-    background: linear-gradient(135deg, #0d1120 0%, #3b3b3b 23%, #0d1120 100%); /* Dark background with neon magenta */
-    padding: 1.5rem;
-    border-radius: 1.2rem;
-  }
-  
+  background: linear-gradient(#000000f5, #000000, #00000098,#000000); /* Neon cyan to neon magenta */
+  padding: 10px;
+  border-radius: 1.2rem;
+  box-shadow: 0px 0px 20px 5px darkviolet ;
+  max-width: 500px;
+}
+
+.card {
+  font-size: 1rem;
+  color: white; /* Neon yellow */
+  background: linear-gradient(135deg, #0d1120 0%, #3b3b3b 23%, #0d1120 100%); /* Dark background with neon magenta */
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+}

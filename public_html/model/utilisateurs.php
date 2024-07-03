@@ -66,43 +66,53 @@ function getUtilisateurByPseudo($pseudo) {
         die();
     }
 }
-function updtPseudoUtilisateur($mail, $pseudo) {
-    $resultat = -1;
+
+function getMailByPseudo($pseudo) {
+    try {
+        $cnx = DBconnection();
+        $req = $cnx->prepare("SELECT mail FROM utilisateurs WHERE pseudo = :pseudo;");
+        $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+        $req->execute();
+
+        $resultat = $req->fetch(PDO::FETCH_ASSOC);
+        return $resultat['mail']; // Retourne seulement l'e-mail
+    } catch (PDOException $e) {
+        print 'Erreur !: ' . $e->getMessage(); 
+        die();
+    }
+}
+function updPseudoUtilisateur($mail, $pseudo) {
     try {
         $cnx = DBconnection();
 
-        $req = $cnx->prepare("update utilisateurs set pseudo=:pseudo where mail=:mail");
+        $req = $cnx->prepare("UPDATE utilisateurs SET pseudo=:pseudo WHERE mail=:mail");
         $req->bindValue(':mail', $mail, PDO::PARAM_STR);
         $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
 
         $resultat = $req->execute();
+        return $resultat;
     } catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
 }
 
-function updtMdpUtilisateur($mail, $mdp) {
-    $resultat = -1;
-
+function updMdpUtilisateur($mail, $mdp) {
     try {
         $cnx = DBconnection();
 
-        $mdpUCrypt = crypt($mdp, "sel");
-        $req = $cnx->prepare("update utilisateurs set mdp=:mdp where pseudo=:pseudo;");
-        $req->bindvalue(':mdp', $mdp, PDO::PARAM_STR);
-        $req->bindvalue(':mail', $mail, PDO::PARAM_STR);
-        $req->execute();
+        $mdpCrypt = password_hash($mdp, PASSWORD_DEFAULT); // Mettez à jour le mot de passe crypté
+        $req = $cnx->prepare("UPDATE utilisateurs SET mdp=:mdp WHERE mail=:mail");
+        $req->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $req->bindValue(':mdp', $mdpCrypt, PDO::PARAM_STR);
 
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
+        $resultat = $req->execute();
+        return $resultat;
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage();
+        print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
 }
-
 function UpdMailUtilisateur($mail, $mdp) {
     $resultat = -1;
 
@@ -123,41 +133,34 @@ function UpdMailUtilisateur($mail, $mdp) {
 }
 
 function UpdNomUtilisateur($nom, $mail) {
-    $resultat = -1;
-
     try {
         $cnx = DBconnection();
 
-        $req = $cnx->prepare("update utilisateurs set nom=:nom where mail=:mail;");
-        $req->bindvalue(':nom', $nom, PDO::PARAM_STR);
-        $req->bindvalue(':mail', $mail, PDO::PARAM_STR);
-        $req->execute();
+        $req = $cnx->prepare("UPDATE utilisateurs SET nom=:nom WHERE mail=:mail");
+        $req->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $req->bindValue(':nom', $nom, PDO::PARAM_STR);
 
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
+        $resultat = $req->execute();
+        return $resultat;
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage();
+        print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
 }
-
 function UpdPrenomUtilisateur($prenom, $mail) {
-    $resultat = -1;
-
     try {
         $cnx = DBconnection();
 
-        $req = $cnx->prepare("update utilisateurs set prenom=:prenom where mail=:mail;");
-        $req->bindvalue(':prenom', $prenom, PDO::PARAM_STR);
-        $req->bindvalue(':mail', $mail, PDO::PARAM_STR);
-        $req->execute();
+        $req = $cnx->prepare("UPDATE utilisateurs SET prenom=:prenom WHERE mail=:mail");
+        $req->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $req->bindValue(':prenom', $prenom, PDO::PARAM_STR);
 
-        $resultat = $req->fetchAll(PDO::FETCH_ASSOC);
+        $resultat = $req->execute();
+        return $resultat;
     } catch (PDOException $e) {
-        print "Erreur !:". $e->getMessage();
+        print "Erreur !: " . $e->getMessage();
         die();
     }
-    return $resultat;
 }
 
 function addUtilisateur($prenom, $nom, $pseudo, $mdp, $mail) {
