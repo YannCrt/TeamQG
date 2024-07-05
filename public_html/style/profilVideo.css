@@ -1,0 +1,57 @@
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.video-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.video-item {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.video-description {
+  display: block;
+  margin: 5px 0;
+  color: #666;
+}
+
+.video-element {
+  display: block;
+  margin: 10px 0;
+  max-width: 100%;
+}
+
+.delete-form {
+  display: inline;
+}
+
+.btn a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.add-video {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.no-videos {
+  text-align: center;
+  color: #666;
+}

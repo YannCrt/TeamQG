@@ -1,5 +1,8 @@
-<div class = 'competition_signuppage'>
-<section>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <div class="bgblue"> 
  <div class="card"> 
@@ -32,6 +35,4 @@
       pour cela envoyez nous un e-mail pour que nous puissions vous aidez dans votre démarche. 
    </p>
 </div> 
-</div>
-</section>
 </div>

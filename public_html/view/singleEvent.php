@@ -35,12 +35,11 @@
        </div>
 
        <div class = 'competition_signups'>
-            <form action='./?_=signin_competitions&competitionid=<?php echo"$event['idEvent']";?>&show_form=true&form_name=<?php echo"$event[name]";?> method="post">
+            <form action='./?_=signin_competitions&competitionid=<?php echo"$event[idEvent]";?>&show_form=true&form_name=<?php echo"$event[name]";?> method="post"'>
                 <input type="hidden" name="form_informations" value = "<?php echo"$event[informations]";?>">
                 <input type="hidden" name="sentName" value = "<?php echo"$event[name]";?>">
                 <input type="hidden" name="origin" value = "event">
-                
-                <input class = 'competition_button_signup' type ='submit' name = 'confirm' width = '20' value ="S'inscrire" onclick = ''/></a>
+                <input class = 'competition_button_signup' type ='submit' name = 'confirm' width = '20' value ="S'inscrire" onclick = ''></a>
             </form>
         </div>
     </div>

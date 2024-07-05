@@ -11,6 +11,17 @@
         <link rel="stylesheet" href="style/credits.css">
         <link rel="stylesheet" href="style/competitions.css">
         <link rel="stylesheet" href="style/events.css">
-        <link rel="stylesheet" href="/style/cyberpunk.css">
+        <link rel="stylesheet" href="style/contact.css">
+        <link rel="stylesheet" href="style/homevideo.css">
+        <link rel="stylesheet" href="style/profilVideo.css">
+        <link rel="stylesheet" href="style/inscription.css">
+        <link rel="stylesheet" href="style/monprofil.css">
+        <link rel="stylesheet" href="style/mesvideos.css">
+        <link rel="stylesheet" href="style/members.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link rel="icon" type="image/x-icon" href="../assets/logo.png">
-</head>      
+        
+</head> 

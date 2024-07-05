@@ -12,7 +12,7 @@ if (isLoggedOn()){
     // appel du script de vue qui permet de gerer l'affichage des donnees
     include_once "$racine/view/header.php";
     include_once "$racine/view/monProfil.php";
-    include_once "$racine/view/credits.php";
+
 }
 else{
     include_once "$racine/view/header.php";

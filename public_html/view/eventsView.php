@@ -1,5 +1,5 @@
 <div class = 'competition_mainscreeen'>
-<h1 class = 'title'>évenement EN COURS.</h1>
+<h1 class = 'title'>ÉVENEMENT EN COURS.</h1>
 </div>
 <div class = 'events'>
 <?php 

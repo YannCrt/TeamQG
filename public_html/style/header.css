@@ -30,7 +30,7 @@ body {
 .navibutton {
     position: relative;
     display: inline-block; /* Assurez-vous que le bouton est inline-block pour que le SVG puisse l'entourer */
-    padding: 2rem; /* Ajoutez un padding pour que le SVG ne soit pas collé au texte */
+    padding: 2.3rem; /* Ajoutez un padding pour que le SVG ne soit pas collé au texte */
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
@@ -71,4 +71,3 @@ body {
     margin-top: -2px;
     stroke-width:5px;
 }
-

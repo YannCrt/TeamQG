@@ -16,6 +16,8 @@ function DBconnection() {
     }
 }
 
+$pdo = DBconnection();
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog de test
     header('Content-Type:text/plain');

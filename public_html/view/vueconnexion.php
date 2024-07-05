@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 <br>
@@ -35,7 +36,7 @@
                         ?>
                     </div>
                     <br>
-                    <div class="inputBx">
+                    <div class="inputBx password-container">
                         <input 
                             type="password" 
                             id="mdp" 
@@ -44,6 +45,9 @@
                             placeholder="Mot de passe" 
                             required
                         >
+                        <button type="button" id="togglePassword">
+                            <span class="fas fa-eye eye-icon"></span>
+                        </button>
                         <?php
                         if (isset($_SESSION['mdp_error'])) {
                             echo '<p class="error">' . $_SESSION['mdp_error'] . '</p>';
@@ -68,5 +72,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#mdp');
+
+    togglePassword.addEventListener('click', function () {
+        // Basculer l'attribut type
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+
+        // Basculer l'icône de l'œil
+        this.querySelector('span').classList.toggle('fa-eye');
+        this.querySelector('span').classList.toggle('fa-eye-slash');
+    });
+</script>
 </body>
 </html>

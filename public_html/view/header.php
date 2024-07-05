@@ -18,5 +18,6 @@ include_once "$racine/model/authentification.php" ?>
         <?php } ?>
     </table>
 </div>
-<script type= 'text/javascript' src='../model/script.js'></script>
+<script type= 'text/javascript' src='../model/header.js'></script>
+
 

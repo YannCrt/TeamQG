@@ -24,8 +24,5 @@
         <p class ='competition_description_text'><?php echo"$comp[description]";?></p>
         </div>
         
-        <div class = 'competition_signups'>
-        <a href='./?_=signin_competitions&competitionid=<?php echo"$comp[id]";?>&show_form=true&form_name=<?php echo"$comp[name]";?>&form_informations=<?php echo"$comp[informations]";?>'><input class = 'competition_button_signup' type ='button' name = 'confirm' width = '20' value ="S'inscrire" onclick = ''/></a>
-        </div>
     </div>
 </div>

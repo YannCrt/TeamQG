@@ -218,8 +218,10 @@ CREATE TABLE video (
     titre VARCHAR(255) NOT NULL,
     description TEXT,
     fichier LONGBLOB NOT NULL,
-    datee DATE
-);
+    datee DATE,
+    utilisateur_id INT NOT NULL,
+    FOREIGN KEY (utilisateur_id) REFERENCES utilisateurs(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Index pour les tables déchargées

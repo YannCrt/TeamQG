@@ -184,29 +184,20 @@ function updFichierVideo($id,$fichier) {
     return $resultat;
 }
 
-function addVideo($titre, $description, $fichier, $datee) {
-    try {
-        $cnx = DBconnection();
-
-        $req = $cnx->prepare('INSERT INTO video (titre, description, fichier, datee) VALUES (:titre, :description, :fichier, :datee)');
-        $req->bindValue(':titre', $titre, PDO::PARAM_STR);
-        $req->bindValue(':description', $description, PDO::PARAM_STR);
-        $req->bindValue(':fichier', $fichier, PDO::PARAM_LOB); // Changed to PDO::PARAM_LOB for LONGBLOB
-        $req->bindValue(':datee', $datee, PDO::PARAM_STR);
-
-        $resultat = $req->execute();
-        if ($resultat) {
-            return true;
-        } else {
-            // Si l'exécution échoue, on log les erreurs possibles
-            $errorInfo = $req->errorInfo();
-            throw new Exception("Erreur d'insertion: " . $errorInfo[2]);
-        }
-    } catch (PDOException $e) {
-        throw new Exception("Erreur !: " . $e->getMessage());
-    }
+function addVideo($titre, $description, $fichier, $datee, $utilisateur_id) {
+    global $pdo;  // Assurez-vous que $pdo est globalement accessible
+    $query = "INSERT INTO video (titre, description, fichier, datee, utilisateur_id) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$titre, $description, $fichier, $datee, $utilisateur_id]);
 }
 
+function getVideosByUserId($userId) {
+    global $pdo;  // Assurez-vous que $pdo est globalement accessible
+    $query = "SELECT * FROM video WHERE utilisateur_id = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 function deleteVideoById($id) {
     try {

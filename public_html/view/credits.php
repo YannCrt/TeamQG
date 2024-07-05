@@ -9,9 +9,9 @@
             <!-- Newsletter Form -->
             <div class="newsletter">
               <form action="/subscribe" method="post">
-                <input type="text" name="firstname" placeholder="First Name">
-                <input type="text" name="lastname" placeholder="Last Name">
-                <input type="email" name="email" placeholder="Enter your email">
+                <input type="text" name="firstname" placeholder="Nom">
+                <input type="text" name="lastname" placeholder="Prénom">
+                <input type="email" name="email" placeholder="Entre votre email">
                 <button type="submit">Confirmer</button>
               </form>
             </div>
@@ -32,7 +32,7 @@
         <div class="col-md-4">
           <h4>Suivez-nous</h4>
           <ul class="social-network social-circle">
-            <li><a href="https://www.instagram.com/team__qg/" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://www.instagram.com/team__qg/" class="icoInstagram" title="Instagram"><img src="assets/instagram.png" alt="Instagram"></a></li>
           </ul>        
         </div>
       </div>

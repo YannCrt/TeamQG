@@ -1,422 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
-@font-face {font-family: "CCSignLanguage Bold";
-    src: url("fonts/3a137c528c2902708ed78ac8a6af72fb.eot"); /* IE9*/
-    src: url("fonts/3a137c528c2902708ed78ac8a6af72fb.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-    url("fonts/3a137c528c2902708ed78ac8a6af72fb.woff2") format("woff2"), /* chrome、firefox */
-    url("fonts/3a137c528c2902708ed78ac8a6af72fb.woff") format("woff"), /* chrome、firefox */
-    url("fonts/3a137c528c2902708ed78ac8a6af72fb.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url("fonts/3a137c528c2902708ed78ac8a6af72fb.svg#CCSignLanguage Bold") format("svg"); /* iOS 4.1- */
-  }
- 
-
-.competition_section 
-{
-    float: left;
-    display: block;
-    width: 40vmax;
-    height: 30vmin;
-    text-align: center;
-    border-radius: 2px;
-    background-color: #172020 ;
-    padding-top: 3%;
-    margin-bottom: 10%;
+.competition_mainscreeen {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 5%;
 }
-.competition_details{
-  display: flex;
-  font-family:"Bebas Kai";
-  width: 20%;
-  height: 5vmin;
-  font-size: 1.3vmax;
-  font-style: italic;
-  color: aliceblue;
-  margin: 2vmin;
-  font-weight: bold;
-  border: 2px solid white;
-  position: relative;
-  top: 1;
-  left: 38%;
-  border-radius: 0.4vmax;
-  opacity: 0.6;
+
+/* Styles pour le titre ('h1') dans la classe 'competition_mainscreeen' */
+.competition_mainscreeen .title {
+  font-size: 24px;
+  color: #333;
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  background-color: #272727;
 }
-.competition_details:hover{
-  background-color: #87878745;
-  cursor: pointer;
-}
-.title{
-  font-family:"Bebas Kai";
-  font-size: 50px;
-  color: #ffffff;
-  text-align: center;
-  vertical-align: middle;
-}
-.competition_mainscreeen{
+
+/* Styles pour la classe 'main_divcomp' */
+.main_divcomp {
   display: flex;
-  width: 100vmax;
-  margin-top: 15vmin;
-  margin-bottom: 15vmin;
-  background-color: #5c7d9e99;
-  height: 15vmin;
-  justify-content: center;
-  align-items: center;
-}
-
-.parent_competition{
-   float: left;
-  display: flex;
-  height: auto;
-  width: 100vmax;
-  justify-content: center;
-  align-items:center;
-  margin-top:1vmin;
-}
-
-.competion_blank{
-  float: left;
-  width: 20vmax;
-  height: 75vmin;
-
-}
-.description_blackbackground{
-  float: left;
-  position:fixed;
-  width: 100%;
-  height:100%;
-  background-color: #000000;
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  pointer-events: all;
-}
-.competition_description_text{
-  font-family: 'Roboto';
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
-  font-size: 1vmax;
-
-  color: #ffffff;
-
-}
-.competition_close_button{
-  float: left;
-  width: 100%;
-  height: 5vh;
-  position: relative;
-}
-.competition_description_div{
-  float: left;
-  width: 60%;
-  border-radius: 0.5vmax;
-  border: 2px solid #1d1d1dd3;
-  height: auto;
-  background-color: #6c8dae;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  padding: 1.5vmin;
-}
-.competition_name_date{
-    width: 100%;
-    font-family:"Bebas Kai";
-    font-weight: bold;
-    color: #ffffff;
-}
-.competition_name{
-  font-size: 2vmax;
-}
-.competition_date{
-  font-size: 1.5vmax;
-  font-style: italic;
-}
-.competition_box{
-  width: 100%;
-  height: 100%;
-  background-color: #26374b;
-  z-index: 75;
-}
-
-.competition_description{
-  float: left;
-  width: 50vmax;
-  height: auto;
-  display: block;
-  font-size: 0.5vmax;
-  position: relative;
-  border-radius: 5px;
-  top: 5%;
-  left: 25vmax;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100;
-}
-.competition_location{
-  font-size: 1.2vmax;
-  font-style: italic;
-  opacity: 0.5;
-}
-.competition_description_location{
-    width: 100%;
-    color: #ffffff;
-    font-family: 'Bebas Kai';
-}
-.competition_signups{
-    width: 20%;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.competition_button_signup{
-    width: auto;
-    border: none;
-    outline: none;
-    background: #4746A4;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.35vmax;
-    font-family: "Bebas Kai";
-    letter-spacing: 0.05em;
-    padding: 5px;
-    cursor: pointer;
-    position: relative;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    border-radius: 4px;
-}
-
-.competition_signuppage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.extra_info{
-    position: relative;
-    width: 100%;
-    background: #5f5f5f;
-    border: none;
-    outline: none;
-    padding: 7px 7px 7px;
-    border-radius: 4px;
-    color: #fff;
-    font-weight: 200;
-    font-size: 0.5em;
-    overflow-wrap: break-word;
-}
-.intro{
-    height: 10vh;
-    width: 100%;
-    background-image: url(background.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 45px;
-    padding-left: 5%;
-    padding-right: 8%;
-}
-
-.logo a{
-    color: black;
-    text-decoration: none;
-    font-size: 35px;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
-.logo a:hover{
-    color: rgb(80, 80, 174);
-    transition: .4s;
-}
-
-nav ul li{
-    display: inline-block;   /*mettre en ligne*/
-    padding: 10px 25px;
-}
-
-nav ul li a{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: large;
-    text-transform: capitalize;
-}
-
-nav ul li a:hover{
-    color: rgb(80, 80, 174);
-    transition: .4s;
-}
-
-section 
-{
-  float: left;
-  position: absolute;
-  width: 80vmax;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
   flex-wrap: wrap;
-  overflow: visible;
-  left: 8%;
-  top: 50%;
-  font-family: "Bebas Kai";
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: flex-start; /* Aligne les éléments en haut */
+  margin-top: 5%;
+  margin-bottom: 150px;
 }
 
-section .signin
-{
-  position: absolute;
-  width: 400px;
-  background: #424242;  
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  border-radius: 4px;
-  box-shadow: 0 15px 35px rgba(0,0,0,9);
-}
-section .signin .content 
-{
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
-}
-section .signin .content h2 
-{
-  font-size: 2em;
-  color: rgb(80, 80, 174);
-  text-transform: uppercase;
-}
-section .signin .content .form 
-{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
 
-section .signin .content .form .inputBox input 
-{
-  position: relative;
-  width: 100%;
-  background: #5f5f5f;
-  border: none;
-  outline: none;
-  margin: 10px 0px 10px;
-  padding: 7px 7px 7.5px;
-  border-radius: 4px;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1em;
-}
-section .signin .content .form .inputBox i 
-{
-  position: absolute;
-  left: 0;
-  padding: 0x 0;
-  font-style: normal;
-  color: #aaa;
-  transition: 0.5s;
-  pointer-events: none;
-}
-
-.signupbutton{
-  border: none;
-  outline: none;
-  background: rgb(80, 80, 174);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.35em;
-  letter-spacing: 0.05em;
-  padding: 5px;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-}
-
-.signin .content .form .inputBox input[type="submit"]
-{
+/* Styles pour chaque compétition affichée dans 'main_divcomp' */
+.single-competition {
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #ccc;
   padding: 10px;
-  background: rgb(80, 80, 174);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.35em;
-  letter-spacing: 0.05em;
-  cursor: pointer;
+  margin-bottom: 200px;
 }
 
-input[type="submit"]:hover
-{
-  opacity: 0.6;
-}
-input[type="button"]:hover
-{
-  opacity: 0.6;
+.single-competition h2 {
+  font-size: 18px;
+  color: #333;
 }
 
-section *{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.NomInput {
-    font-family:"Comic Sans";
-}
-.p{
-  color: #fff;
-  margin-bottom: -20px;
-  font-family: "Bebas Kai";
+.single-competition .date {
+  font-style: italic;
+  color: #666;
 }
 
-section .signin .content .form .radio input[type="radio"] {
-  display: none;
+.single-competition .description {
+  margin-top: 10px;
+  color: #555;
 }
 
-
-section .signin .content .form .radio input[type="radio"] + label:before { /*bouttons*/
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #aaa;
-  border-radius: 50%;
-  font-family: "Courrier New";
+/* Styles pour le cas où aucune compétition n'est en cours */
+.no-competition {
+  text-align: center;
+  color: #999;
+  font-style: italic;
 }
 
-section .signin .content .form .radio input[type="radio"]:checked + label:before {
-  background-color: rgb(80, 80, 174);
-  border-color: #aaa;
-}
-
-section .signin .content .form .radio input[type="radio"] + label {
-  position: relative;
-  padding-left: 30px;
-  margin: 10px 0px 10px 0px;
-  cursor: pointer;
-  font-size: 1em;
-  color: #fff;
-  display: block;
-
+.events {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centre le contenu horizontalement */
+  align-items: flex-start; /* Aligne les éléments en haut */
+  margin-top: 5%;
+  margin-bottom: 150px;
 }

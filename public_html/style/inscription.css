@@ -1,0 +1,54 @@
+
+.ring-inscription {
+    position: relative;
+    width: 645px;
+    height: 645px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Ensure there's space below the rings */
+    }
+  
+    .ring-inscription i {
+        position: absolute;
+        inset: 0;
+        border: 2px solid #000000;
+        transition: 0.5s;
+      }
+    
+      .ring-inscription i:nth-child(1){
+        border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+        animation: animate 6s linear infinite;
+      }
+      
+    
+      .ring-inscription i:nth-child(2){
+        border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+        animation: animate 4s linear infinite;
+      }
+      
+    
+      .ring-inscription i:nth-child(3){
+        border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+        animation: animate2 10s linear infinite;
+      }
+    
+      .ring-inscription:hover i:nth-child(1){
+        border: 6px solid #FF00FF;
+        filter: drop-shadow(0 0 20px #ff28ff);
+      }
+    
+      .ring-inscription:hover i:nth-child(2) {
+        border: 6px solid #8000FF;
+        filter: drop-shadow(0 0 20px #8d20fa);
+      }
+    
+    .ring-inscription:hover i:nth-child(3){
+      border: 6px solid #8000FF;
+      filter: drop-shadow(0 0 20px #8d20fa);
+    }/* Keep other existing styles for .ring and other elements unchanged */
+  
+
+    #link-inscription{
+        margin-top: 10px;
+    }

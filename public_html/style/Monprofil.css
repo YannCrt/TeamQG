@@ -1,0 +1,172 @@
+.container-profil {
+    width: 575px; /* Largeur fixe */
+    background-color: #fff; /* Fond blanc */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    flex-direction: column;
+    position: absolute; /* Positionnement absolu pour le centrer */
+    top: 50%; /* Positionner au milieu de la page */
+    left: 50%; /* Positionner au milieu de la page */
+    transform: translate(-50%, -50%); /* Centrage précis */
+    padding: 20px; /* Espacement interne */
+}
+
+/* Style pour centrer l'image de profil */
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Style pour l'image de profil */
+.rounded-circle {
+    border-radius: 50%;
+    border: 2px solid #7a7a7a; /* Bordure bleue */
+    width: 100px; /* Largeur de l'image */
+    height: 100px; /* Hauteur de l'image */
+}
+
+/* Style pour le titre "Mon Profil" */
+.container-profil h5 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #000000; /* Couleur de texte bleue */
+}
+
+/* Style pour la liste des informations */
+.social-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Alignement à gauche */
+    margin-top: 20px; /* Espacement depuis le titre */
+}
+
+/* Style pour chaque élément de la liste */
+.social-list li {
+    margin-bottom: 5px;
+    color: #3d3b3b; /* Couleur de texte grise */
+}
+
+/* Style pour les boutons */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    margin-top: 20px; /* Espacement depuis la liste des informations */
+}
+
+/* Style spécifique pour les boutons */
+.btn-profil {
+    margin-left: 10px; /* Espacement entre les boutons */
+}
+
+/* Style spécifique pour les liens dans les boutons */
+.btn-profil a {
+    color: #fff; /* Couleur de texte blanche */
+    text-decoration: none;
+}
+
+/* Style pour les boutons */
+.btn-primary {
+    background-color: #000000; /* Fond bleu */
+    border-color: #000000; /* Bordure bleue */
+    color: #fff; /* Couleur de texte blanche */
+}
+
+#deco {
+    width: auto;
+}
+
+#sup {
+    width: auto;
+}
+
+#modifier {
+    width: auto;
+}
+
+#mesvideos {
+    width: auto;
+}
+
+/* Hover pour les boutons */
+.btn-primary:hover {
+    background-color: #353535; /* Fond bleu plus foncé au survol */
+    border-color: #353535; /* Bordure bleue plus foncée au survol */
+}
+
+.modifier {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    margin: auto; /* Center the container */
+  }
+  
+  .success-message {
+    color: #28a745;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the success message */
+  }
+
+  .error {
+    color: #ff0000;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the success message */
+  }
+  
+  
+  .modifier h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333333;
+    text-align: center; /* Center the headings */
+  }
+  
+  .modifier input[type="text"],
+  .modifier input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333333;
+  }
+  
+  .modifier input[type="text"]:focus,
+  .modifier input[type="password"]:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 8px rgb(255, 255, 255);
+    outline: none;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+  
+  .btn:hover {
+    background-color: black;
+  }
+  
+  
+
+  .modifier {
+    padding: 10px;
+    border-radius: 1.2rem;
+    width: 420px;
+    margin: 200px auto; /* Centre l'élément horizontalement */
+    border: 1px solid black; /* Ajoute une bordure noire fine */
+  }
