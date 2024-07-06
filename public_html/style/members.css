@@ -195,4 +195,6 @@ article:has(:hover, :focus) {
   
 }
 
-
+h2.gest {
+  margin: 100px;
+}

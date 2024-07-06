@@ -364,30 +364,6 @@ margin-bottom: 20px; /* Ensure there's space below the rings */
   padding: 20px;
 }
 
-
-
-/* Styles pour la section de description */
-.home_description {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  border: solid black 2px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-.home_description h2 {
-  color: #000000;
-  font-size: 24px;
-  font-family: Montserrat;
-}
-
-.home_description p {
-  color: #000000;
-  line-height: 1.6;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif  
-}
-
 /* Styles pour la section des membres */
 .memberstitle {
   background-color: #333;
@@ -398,24 +374,77 @@ margin-bottom: 20px; /* Ensure there's space below the rings */
 }
 
 
+.home{
+  margin-top: 400px;
+  width: 80%;
+  margin: auto;
+  display: block;
+}
+
+.video-js {
+  border-radius: 5px;
+  border: 4px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
 .home_description {
-  float: left;
-  font-family: "Bebas Kai";
-  font-size: 1.5vmax;
-  width: 40vmax;
-  height: auto;
-  margin-left: 10%;
-  margin-top: 0%;
-  color: var(--bs-link-hover-color-rgb);
-  background: #ffffff; 
-  padding: 20px; 
-  border-radius: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 170px;
 }
 
 .home_description h2 {
-  color:rgb(0, 0, 0);
+  color: #000000;
+  font-family: Montserrat;
 }
 
-.home{
-  margin-top: 150px;
+.home_description p {
+  color: #000000;
+  line-height: 1.6;
+  font-family:'Open sans', sans-serif  
+}
+
+.custom-separator {
+  width: 40cm; /* Ajustez à 2cm si vous préférez */
+  height: 100%; /* Augmentez la hauteur pour une ligne plus épaisse */
+  background-color: black; /* Couleur de la ligne */
+  margin: 20px auto; /* Centre la ligne horizontalement */
+}
+  
+p.membres {
+  text-align: center;
+  font-family: Montserrat, sans-serif;
+  color: #000;
+}
+
+
+.membres {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.allmembers {
+  text-align: center;
+}
+
+.members.articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+article {
+  margin: 20px;
+}
+
+figure {
+  margin: 0;
+}
+
+.article-body {
+  text-align: center;
 }

@@ -1,43 +1,42 @@
 /* Style pour la liste des vidéos */
-h1.h1{
+.h1 {
     margin-top: 50px;
 }
 
-h2.h2 {
+.h2 {
     margin-top: 30px;
 }
 
 .ul {
     list-style-type: none;
     padding: 0;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-left: 30px;
 }
 
 .li {
+    flex: 0 0 calc(33.33% - 20px); /* 3 vidéos par ligne avec espacement */
     margin-bottom: 20px;
     padding: 15px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
-    flex: 1 0 calc(25% - 20px); /* Répartit les éléments en 4 colonnes */
     margin-right: 20px; /* Espace entre les vidéos */
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .li {
-        flex: 1 0 calc(50% - 20px); /* Sur écrans plus petits, répartit en 2 colonnes */
-        margin-right: 10px; /* Réduit l'espace entre les vidéos */
+        flex: 0 0 calc(50% - 20px); /* 2 vidéos par ligne */
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .li {
-        flex: 1 0 100%; /* Sur mobile, affiche les vidéos sur une seule colonne */
-        margin-right: 0; /* Aucun espace entre les vidéos */
+        flex: 1 0 100%; /* 1 vidéo par ligne */
+        margin-right: 0; /* Aucun espacement */
     }
 }
-
 /* Style pour les titres et autres éléments */
 .titre {
     font-weight: bold;
@@ -62,10 +61,172 @@ h2.h2 {
     text-decoration: none;
     cursor: pointer;
     border: 2px;
-    border-radius: 4px 
+    border-radius: 4px;
 }
 
 /* Styles pour la vidéo d'accueil */
 .custom-video__container {
     margin-bottom: 20px;
+}
+
+.btn-addvideo {
+    margin-left: 89.5%;
+}
+
+.novideo {
+    margin: 100px;
+    margin-bottom: 100px;
+    margin-left: 45%
+}
+
+/* Style général pour le container */
+.container-updVideo {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 1.2rem;
+}
+
+/* Style pour le message de succès */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Style pour le titre de la page */
+h1 {
+    text-align: center;
+    color: #000;
+}
+
+/* Style pour les labels des champs de formulaire */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; /* Réduit la marge sous les labels */
+    color: #000;
+}
+
+/* Style pour les champs de texte */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    resize: none; /* Empêche le redimensionnement de la textarea */
+    
+}
+
+/* Style pour le bouton de soumission */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Style pour les liens */
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Ajout d'un effet au survol pour les boutons */
+button[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Style pour éviter les chevauchements et assurer une bonne lisibilité */
+input[type="text"]:focus,
+textarea:focus,
+button[type="submit"]:focus {
+    outline: none;
+    border-color: #555;
+}
+
+/* Style pour la ligne séparatrice */
+.separator-line {
+    border-top: 1px solid #000;
+    margin: 20px 0; /* Augmenté la marge haut et bas */
+}
+
+
+
+.separator-line {
+  border-top: 1px solid #000;
+  margin: 10px 0; /* Marge haut et bas de 20px */
+}
+
+textarea#description {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  resize: vertical; /* Permet uniquement le redimensionnement vertical */
+  min-height: 150px; /* Hauteur minimale */
+  max-height: 300px; /* Hauteur maximale */
+  resize: none;
+}
+
+.container-updVideo {
+    max-width: 600px;
+    margin: 300px auto; 
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    border-radius: 1.2rem;
+}
+
+
+.addVideo {
+    max-width: 600px;
+    margin: 250px auto;
+    padding: 20px;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 1.2rem;
+  }
+  
+  .addVideo h2 {
+    text-align: center;
+  }
+  
+  .addVideo form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .addVideo form input[type="text"],
+  .addVideo form textarea,
+  .addVideo form input[type="date"],
+  .addVideo form input[type="file"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #000000;
+    background-color: #fff;
+  }
+  
+  .addVideo form input[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
   }

@@ -8,6 +8,7 @@ function controleurPrincipal($action){
     $Actions["competitions"]="competitions.php";
     $Actions["signin_competitions"]="signin_competitions.php";
     $Actions["confirmation"] = "confirmation.php";
+    $Actions["gererUtilisateurs"] = "gererUtilisateurs.php";
     
     $Actions['contact'] = "contact.php";
     $Actions['connexion'] = "connexion.php";

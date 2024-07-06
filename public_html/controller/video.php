@@ -6,8 +6,12 @@ include_once "$racine/model/video.php";
 
 // Vérifier si l'utilisateur est connecté
 if (isLoggedOn()) {
-    // Récupérer toutes les vidéos
-    $videos = getVideos();
+    // Récupérer l'utilisateur connecté
+    $utilisateur = getUtilisateurByPseudo(getPseudoLoggedOn());
+    $userId = $utilisateur['id'];
+
+    // Récupérer les vidéos de l'utilisateur
+    $videos = getVideosByUserId($userId);
 
     // Inclure les vues après la récupération des vidéos
     include_once "$racine/view/header.php";
@@ -18,4 +22,5 @@ if (isLoggedOn()) {
     header("Location: ./?action=video");
     exit();
 }
+
 ?>

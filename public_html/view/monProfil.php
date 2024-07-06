@@ -9,7 +9,7 @@
         <h5 class="mt-2 mb-0">Mon Profil</h5>
         <ul class="social-list">
             <li></i>Nom d'utilisateurs : <?= htmlspecialchars($util["pseudo"]) ?></li>
-            <li></i>Mail : <?= htmlspecialchars($util["mail"]) ?></li>
+            <li></i>Mail : <?= censorEmail($util["mail"]) ?></li>
             <li></i>Nom : <?= htmlspecialchars($util["nom"]) ?></li>
             <li></i>Prenom : <?= htmlspecialchars($util["prenom"]) ?></li>
         </ul>

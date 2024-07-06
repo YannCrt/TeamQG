@@ -16,6 +16,14 @@ function getVideos() {
     return $resultat;
 }
 
+function getVideosByUserId($userId) {
+    global $pdo;  
+    $query = "SELECT * FROM video WHERE utilisateur_id = ?";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([$userId]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getVideoById($id) {
     try {
         $cnx = DBconnection();
@@ -189,14 +197,6 @@ function addVideo($titre, $description, $fichier, $datee, $utilisateur_id) {
     $query = "INSERT INTO video (titre, description, fichier, datee, utilisateur_id) VALUES (?, ?, ?, ?, ?)";
     $stmt = $pdo->prepare($query);
     $stmt->execute([$titre, $description, $fichier, $datee, $utilisateur_id]);
-}
-
-function getVideosByUserId($userId) {
-    global $pdo;  // Assurez-vous que $pdo est globalement accessible
-    $query = "SELECT * FROM video WHERE utilisateur_id = ?";
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([$userId]);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function deleteVideoById($id) {

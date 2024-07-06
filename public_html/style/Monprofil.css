@@ -1,16 +1,16 @@
 .container-profil {
-    width: 575px; /* Largeur fixe */
-    background-color: #fff; /* Fond blanc */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    flex-direction: column;
-    position: absolute; /* Positionnement absolu pour le centrer */
-    top: 50%; /* Positionner au milieu de la page */
-    left: 50%; /* Positionner au milieu de la page */
-    transform: translate(-50%, -50%); /* Centrage précis */
-    padding: 20px; /* Espacement interne */
+  width: 575px; /* Largeur fixe */
+  background-color: #fff; /* Fond blanc */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Ombre légère */
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+  flex-direction: column;
+  position: absolute; /* Positionnement absolu pour le centrer */
+  top: 50%; /* Positionner au milieu de la page */
+  left: 50%; /* Positionner au milieu de la page */
+  transform: translate(-50%, -50%); /* Centrage précis */
+  padding: 20px; /* Espacement interne */
 }
 
 /* Style pour centrer l'image de profil */
@@ -170,3 +170,62 @@
     margin: 200px auto; /* Centre l'élément horizontalement */
     border: 1px solid black; /* Ajoute une bordure noire fine */
   }
+
+  .input-upd {
+    margin-left: 10px;
+  }
+/* Style pour le conteneur de confirmation de suppression */
+.confirmation-suppression {
+  width: 100%; /* Largeur à 100% */
+  max-width: 600px; /* Largeur maximale de 600px, ajustez selon vos besoins */
+  margin: 20px auto; /* Centrer horizontalement avec un espacement extérieur de 20px */
+  padding: 20px; /* Espacement intérieur */
+  background-color: white; /* Couleur de fond blanche */
+  border: 1px solid #000; /* Bordure noire */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  text-align: center; /* Centrer le contenu à l'intérieur */
+  border-radius: 10px;
+  margin-top: 250px;
+  margin-bottom: 100px;
+}
+
+/* Style pour le titre */
+.confirmation-suppression h2 {
+  margin-top: 0; /* Supprimer la marge supérieure du titre */
+  font-size: 24px; /* Taille de police du titre */
+  color: black; /* Couleur de texte noire */
+}
+
+/* Style pour le conteneur des boutons */
+.confirmation-suppression .container-suppression {
+  margin-top: 20px; /* Espacement entre le titre et les boutons */
+}
+
+/* Style de base pour les boutons */
+.confirmation-suppression .btn-oui,
+.confirmation-suppression .btn-non {
+  cursor: pointer; /* Curseur de souris sur les boutons */
+  padding: 10px 20px; /* Espacement intérieur des boutons */
+  border: 1px solid black; /* Bordure noire */
+  border-radius: 5px; /* Coins arrondis */
+  font-size: 16px; /* Taille de police des boutons */
+  margin: 0 5px; /* Marge entre les boutons */
+  background-color: black; /* Couleur de fond noire */
+  color: white; /* Couleur de texte blanche */
+  text-decoration: none; /* Supprimer le soulignement du lien */
+  display: inline-block; /* Afficher comme un bloc en ligne */
+  margin-top: 10px;
+}
+
+.confirmation-suppression .btn-non a {
+  color: white; /* Couleur du texte blanc */
+  text-decoration: none; /* Supprimer le soulignement du lien */
+}
+
+.confirmation-suppression .btn-oui:hover,
+.confirmation-suppression .btn-non:hover {
+  background-color: rgb(29, 29, 29); /* Couleur de fond blanche au survol */
+  color: black; /* Couleur du texte noire */
+  border: 1px solid black; /* Bordure noire */
+}
+

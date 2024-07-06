@@ -18,6 +18,55 @@ function getUtilisateurs() {
     return $resultat;
 }
 
+// Vérification si l'utilisateur est administrateur
+// authentification.php (ou où vous gérez les fonctions d'authentification)
+// authentification.php// Assurez-vous que la fonction estAdmin est correctement définie et qu'elle fonctionne comme prévu
+function estAdmin($utilisateur_id) {
+    try {
+        $cnx = DBconnection(); // Assurez-vous que DBconnection() retourne une connexion PDO valide
+        $query = "SELECT est_admin FROM utilisateurs WHERE id = :id";
+        $stmt = $cnx->prepare($query);
+        $stmt->bindParam(':id', $utilisateur_id);
+        $stmt->execute();
+        $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $resultat['est_admin'] ?? false;
+    } catch (PDOException $e) {
+        // Gérer les erreurs PDO
+        echo "Erreur : " . $e->getMessage();
+        return false;
+    }
+}
+
+
+// Ajouter un utilisateur en tant qu'administrateur
+function ajouterAdmin($id_utilisateur) {
+    try {
+        $cnx = DBconnection();
+        $req = $cnx->prepare("UPDATE utilisateurs SET est_admin = 1 WHERE id = :id");
+        $req->bindValue(':id', $id_utilisateur, PDO::PARAM_INT);
+        $req->execute();
+        return true;
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+}
+// Rétrograder un administrateur (revenir à un utilisateur normal)
+function retrograder($id_utilisateur) {
+    try {
+        $cnx = DBconnection();
+        $req = $cnx->prepare("UPDATE utilisateurs SET est_admin = 0 WHERE id = :id");
+        $req->bindValue(':id', $id_utilisateur, PDO::PARAM_INT);
+        $req->execute();
+        return true;
+    } catch (PDOException $e) {
+        print "Erreur !: " . $e->getMessage();
+        die();
+    }
+}
+
+
+
 function getUtilisateurById($id) {
     $resultat = array(); 
 

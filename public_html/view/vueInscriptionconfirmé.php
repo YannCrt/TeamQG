@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="container-inscription">
-    <h2>Inscription Réussie</h2>
-    <p>Votre inscription a été réalisée avec succès.</p>
+    <h2 class="inscription">Inscription Réussie</h2>
+    <p class="inscription">Votre inscription a été réalisée avec succès.</p>
     </div>
 </body>
 </html>

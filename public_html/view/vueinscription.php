@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Inclure le fichier CSS pour le formulaire -->
+    <!-- Inclure le fichier CSS pour le formulaire -->
     <title>Inscription</title>
 </head>
 <body>
@@ -18,30 +18,29 @@
         <i></i>
         <div class="login">
             <h2>Inscription</h2>
-            <for action="./?action=inscription" method="POST">
-            <div class="inputBx">
-       
-            <input type="text" id="prenom" name="prenom" autocomplete="off" placeholder="Prénom" required>
-            </div>
-            <br>
-            <div class="inputBx">   
-            <input type="text" id="nom"  name="nom" autocomplete="off" placeholder="Nom" required>
-            </div>
-            <div class="inputBx">
-            <br>
-            <input type="text" id="pseudo" name="pseudo" autocomplete="off" placeholder="Pseudo" required>
-            </div>
-            <div class="inputBx">
-            <br>
-            <input type="password" id="mdp"  name="mdp" autocomplete="off" placeholder="Mot de passe" required>
-            </div>
-            <div class="inputBx">
-            <br>
-            <input type="email" id="mail" name="mail" autocomplete="off" placeholder="Email" required>
-            </div>
-            <div class="inputBx">
-            <input id="inscire" class="btn register-btn" type="submit" name="envoie" value="S'inscrire">
-            </div>
+            <form action="./?action=inscription" method="POST">
+                <div class="inputBx">
+                    <input type="text" id="prenom" name="prenom" autocomplete="off" placeholder="Prénom" required>
+                </div>
+                <br>
+                <div class="inputBx">   
+                    <input type="text" id="nom"  name="nom" autocomplete="off" placeholder="Nom" required>
+                </div>
+                <div class="inputBx">
+                    <br>
+                    <input type="text" id="pseudo" name="pseudo" autocomplete="off" placeholder="Pseudo" required>
+                </div>
+                <div class="inputBx">
+                    <br>
+                    <input type="password" id="mdp"  name="mdp" autocomplete="off" placeholder="Mot de passe" required>
+                </div>
+                <div class="inputBx">
+                    <br>
+                    <input type="email" id="mail" name="mail" autocomplete="off" placeholder="Email" required>
+                </div>
+                <div class="inputBx">
+                    <input id="inscrire" class="btn register-btn" type="submit" name="envoyer" value="S'inscrire">
+                </div>
             </form>
            
             <div class="links" id="link-inscription">
@@ -52,8 +51,5 @@
 </div>
 <script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
 
-<?php if(isset($_POST['envoie'])) {
-    var_dump($_POST);
-} ?>
-
-<body>
+</body>
+</html>

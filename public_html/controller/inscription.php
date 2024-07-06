@@ -1,12 +1,11 @@
 <?php
-
 $racine = $_SERVER['DOCUMENT_ROOT']; // Définit le chemin racine du document
 
 include_once "$racine/model/utilisateurs.php";
 $inscrit = false;
 $msg = "";
 
-if (isset($_POST['envoie'])) {
+if (isset($_POST['envoyer'])) {
     if (!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['pseudo']) && !empty($_POST['mdp']) && !empty($_POST['mail'])) {
         // Utilisation de htmlspecialchars pour protéger les entrées utilisateur
         $prenom = htmlspecialchars($_POST['prenom']);
@@ -36,5 +35,4 @@ if ($inscrit) {
     include "$racine/view/vueinscription.php"; // Formulaire d'inscription
 }
 include "$racine/view/credits.php";
-
 ?>

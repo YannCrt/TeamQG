@@ -1,4 +1,4 @@
-<body><div class="bandeau-noir">
+<body>
 
 
 
@@ -13,11 +13,6 @@
             et futurs de la section hip-hop du lycée Turgot dans laquelle ils se sont rencontrés. 
             Elle est aujourd'hui une organisation créant divers liens générationnels autour de la culture hip-hop par le biais d'événements culturels et/ou compétitifs
             ou de prestations publiques rassemblant plusieurs générations de danseurs étalées sur presque 10 ans.</p>
+
+          </div>
 </div>
-</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
