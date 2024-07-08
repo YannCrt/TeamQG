@@ -198,3 +198,25 @@ article:has(:hover, :focus) {
 h2.gest {
   margin: 100px;
 }
+
+
+.selec_util {
+  margin-left: 30px;
+}
+
+.center-container {
+  justify-content: center;
+  align-items: center;
+  width: auto; /* Assure que le conteneur prend toute la hauteur de la page */
+}
+
+.search_pseudo_form {
+  margin-left: 30px;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px; /* Définir une largeur maximale pour le formulaire */
+  padding: 20px; /* Ajouter du rembourrage pour un meilleur style */
+  border: 1px solid #ccc; /* Optionnel: ajouter une bordure pour mieux voir le formulaire */
+  border-radius: 10px; /* Optionnel: arrondir les coins */
+  background-color: #f9f9f9; /* Optionnel: ajouter un fond pour le formulaire */
+}

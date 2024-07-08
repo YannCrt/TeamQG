@@ -46,7 +46,6 @@
                             required
                         >
                         <button type="button" id="togglePassword">
-                            <span class="fas fa-eye eye-icon"></span>
                         </button>
                         <?php
                         if (isset($_SESSION['mdp_error'])) {

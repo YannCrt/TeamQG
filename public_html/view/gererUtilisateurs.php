@@ -37,6 +37,9 @@
                                 <?php } else { ?>
                                     <button type="submit" class="btn btn-demote" name="action" value="retrograder">Rétrograder</button>
                                 <?php } ?>
+
+</button>
+
                             </form>
                         </td>
                     </tr>

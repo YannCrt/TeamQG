@@ -230,3 +230,9 @@ textarea#description {
     padding: 10px 20px;
     cursor: pointer;
   }
+
+  select {
+    word-wrap: normal;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
