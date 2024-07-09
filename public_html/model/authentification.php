@@ -17,7 +17,7 @@ function login($pseudo, $mdp) {
         return false;
     }
 }
-
+    
 
 function logout() {
     if (!isset($_SESSION)) {

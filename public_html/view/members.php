@@ -1,23 +1,20 @@
+<p class="membres">Membres</p>
     
-    
-    <p class="membres">Membres</p>
-    
-    <div class = 'allmembers'>
-        <?php $objects = $members->getArray();
-    echo "<div class='space_member'></div>"; 
-
-    echo "<div class='members articles'>"; 
-    foreach ($objects as $key => $object) : ?>
-        <article>
-            <figure>
-                <img src="<?php echo $object->getImagePath(); ?>" alt="<?php echo $object->getName(); ?>">
-            </figure>
-            <div class="article-body">
-                <h2><?php echo $object->getName(); ?></h2>
-                <p class="description"><?php echo $object->getDescription(); ?></p>
+    <div class='allmembers'>
+        <?php foreach ($members as $member) : ?>
+            <div class='space_member'></div>
+            <div class='members articles'>
+                <article>
+                    <figure>
+                        <img src="<?php echo $member['imagefile']; ?>" alt="<?php echo $member['nom']; ?>">
+                    </figure>
+                    <div class="article-body">
+                        <h2><?php echo $member['nom']; ?></h2>
+                        <p class="description"><?php echo $member['description']; ?></p>
+                    </div>
+                </article>
             </div>
-        </article>
-    <?php endforeach; ?>
-    <script type='text/javascript' src='../model/readmore.js'></script>
+        <?php endforeach; ?>
     </div>
-    </DIV>
+    <script src="../model/readmore.js"></script>
+</body>

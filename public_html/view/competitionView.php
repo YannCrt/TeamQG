@@ -1,30 +1,30 @@
-<div class = 'competition_mainscreeen'>
-<h1 class = 'title'>COMPÉTITION EN COURS.</h1>
+<div class="competition_mainscreeen">
+    <h1 class="title">COMPÉTITION EN COURS.</h1>
 </div>
-<div class = 'main_divcomp'>
-    <?php 
-    $db = false;
-    $competitions = $competitions->getArray();
+<div class="events">
+<?php 
+    require_once "$racine/model/competitions.php";
     
-    foreach ($competitions as $object){
+    $competitions = getAllCompetitions(); // Obtient tous les événements
+    
+    if (!empty($competitions)) {
+        $iscompetition = false;
         $currentdate = date('Y-m-d');
-        $comp = $object->getAll();
-        
-        if ($currentdate <= $comp["date"]){
-            $db = true;
-             include "$racine/view/singlecompetition.php";
-        }
-    }
 
-    if(!$db){
-        $comp = array(
-            "name" => "Aucune compétition en cours.",
-            "date" => "",
-            "description" =>"",
-            "location" => ""
-        );
+        foreach ($competitions as $competition) {
+            if ($currentdate <= $competition["datecompetition"]) {
+                $iscompetition = true;
+                include "$racine/view/singlecompetition.php";
+            }
+        }
+
+        if (!$iscompetition) {
+            include "$racine/view/nocompetition.php";
+        }
+    } else {
+        // Aucun événement trouvé
         include "$racine/view/nocompetition.php";
     }
-
-    ?>
+?>
 </div>
+S
