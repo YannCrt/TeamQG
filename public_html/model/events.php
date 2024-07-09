@@ -12,7 +12,7 @@ function getAllEvents() {
         $conn = null; // Fermer la connexion
         return $events;
     } catch (PDOException $e) {
-        print "Erreur lors de la récupération des événements: " . $e->getMessage();
+        print "Erreur lors de la récupération des événements : " . $e->getMessage();
         return []; // Retourner un tableau vide en cas d'erreur
     }
 }
@@ -29,7 +29,7 @@ function getEventById($id) {
         $conn = null; // Fermer la connexion
         return $event;
     } catch (PDOException $e) {
-        print "Erreur lors de la récupération de l'événement: " . $e->getMessage();
+        print "Erreur lors de la récupération de l'événement : " . $e->getMessage();
         return null;
     }
 }
@@ -46,7 +46,42 @@ function registerUserToEvent($event_id, $user_id) {
         $conn = null; // Fermer la connexion
         return $success;
     } catch (PDOException $e) {
-        print "Erreur lors de l'inscription à l'événement: " . $e->getMessage();
+        print "Erreur lors de l'inscription à l'événement : " . $e->getMessage();
+        return false;
+    }
+}
+
+// Fonction pour désinscrire un utilisateur d'un événement
+function unregisterUserFromEvent($event_id, $user_id) {
+    try {
+        $conn = DBconnection();
+        $query = "DELETE FROM inscriptionevent WHERE idEvent = :event_id AND utilisateurs_id = :user_id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':event_id', $event_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $success = $stmt->execute();
+        $conn = null; // Fermer la connexion
+        return $success;
+    } catch (PDOException $e) {
+        print "Erreur lors de la désinscription de l'événement : " . $e->getMessage();
+        return false;
+    }
+}
+
+// Fonction pour vérifier si un utilisateur est inscrit à un événement
+function isUserRegisteredToEvent($event_id, $user_id) {
+    try {
+        $conn = DBconnection();
+        $query = "SELECT * FROM inscriptionevent WHERE idEvent = :event_id AND utilisateurs_id = :user_id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':event_id', $event_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $conn = null; // Fermer la connexion
+        return $result ? true : false;
+    } catch (PDOException $e) {
+        print "Erreur lors de la vérification de l'inscription à l'événement : " . $e->getMessage();
         return false;
     }
 }

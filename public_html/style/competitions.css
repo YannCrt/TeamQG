@@ -22,6 +22,19 @@
   margin-bottom: 150px;
 }
 
+.event {
+  margin-bottom: 40px;
+}
+
+.compet {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* Styles pour chaque compétition affichée dans 'main_divcomp' */
 .single-competition {
@@ -54,11 +67,22 @@
   font-style: italic;
 }
 
-.events {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Centre le contenu horizontalement */
-  align-items: flex-start; /* Aligne les éléments en haut */
-  margin-top: 5%;
-  margin-bottom: 150px;
+.event {
+  display: inline-block;
+  flex: 0 0 calc(33.33% - 20px); 
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 3%;
+}
+
+.event img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px; 
 }

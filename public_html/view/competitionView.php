@@ -1,30 +1,29 @@
-<div class="competition_mainscreeen">
-    <h1 class="title">COMPÉTITION EN COURS.</h1>
+<div class="competition_mainscreen">
+    <h1 class="title">COMPÉTITION EN COURS</h1>
 </div>
 <div class="events">
 <?php 
     require_once "$racine/model/competitions.php";
     
-    $competitions = getAllCompetitions(); // Obtient tous les événements
+    $competitions = getAllCompetitions(); // Obtient toutes les compétitions
     
     if (!empty($competitions)) {
-        $iscompetition = false;
-        $currentdate = date('Y-m-d');
+        $isCompetition = false;
+        $currentDate = date('Y-m-d');
 
         foreach ($competitions as $competition) {
-            if ($currentdate <= $competition["datecompetition"]) {
-                $iscompetition = true;
+            if ($currentDate <= $competition["datecompetition"]) {
+                $isCompetition = true;
                 include "$racine/view/singlecompetition.php";
             }
         }
 
-        if (!$iscompetition) {
+        if (!$isCompetition) {
             include "$racine/view/nocompetition.php";
         }
     } else {
-        // Aucun événement trouvé
+        // Aucune compétition trouvée
         include "$racine/view/nocompetition.php";
     }
 ?>
 </div>
-S

@@ -1,5 +1,5 @@
-<div class="competition_mainscreeen">
-    <h1 class="title">ÉVENEMENT EN COURS.</h1>
+<div class="competition_mainscreen">
+    <h1 class="title">ÉVÉNEMENTS EN COURS</h1>
 </div>
 <div class="events">
 <?php 
@@ -8,18 +8,18 @@
     $events = getAllEvents(); // Obtient tous les événements
     
     if (!empty($events)) {
-        $isevent = false;
-        $currentdate = date('Y-m-d');
+        $isEvent = false;
+        $currentDate = date('Y-m-d');
 
         foreach ($events as $event) {
-            if ($currentdate <= $event["date_event"]) {
-                $isevent = true;
+            if ($currentDate <= $event["date_event"]) {
+                $isEvent = true;
                 include "$racine/view/singleEvent.php";
             }
         }
 
-        if (!$isevent) {
-            include "$racine/view/noEvent.php";;
+        if (!$isEvent) {
+            include "$racine/view/noEvent.php";
         }
     } else {
         // Aucun événement trouvé

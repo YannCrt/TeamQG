@@ -23,7 +23,7 @@ function getCompetitionById($id) {
         $conn = DBconnection();
         $query = "SELECT * FROM competition WHERE idCompetition = :idCompetition";
         $stmt = $conn->prepare($query);
-        $stmt->bindParam(':idCompetiton', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':idCompetition', $id, PDO::PARAM_INT); // Corrected parameter binding
         $stmt->execute();
         $event = $stmt->fetch(PDO::FETCH_ASSOC);
         $conn = null; // Fermer la connexion
@@ -47,6 +47,41 @@ function registerUserToCompetition($competition_id, $user_id) {
         return $success;
     } catch (PDOException $e) {
         print "Erreur lors de l'inscription à la compétition : " . $e->getMessage();
+        return false;
+    }
+}
+
+// Fonction pour désinscrire un utilisateur d'un événement
+function unregisterUserFromCompetition($competition_id, $user_id) {
+    try {
+        $conn = DBconnection();
+        $query = "DELETE FROM inscriptioncompetition WHERE idCompetition = :competition_id AND utilisateurs_id = :user_id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':competition_id', $competition_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $success = $stmt->execute();
+        $conn = null; // Fermer la connexion
+        return $success;
+    } catch (PDOException $e) {
+        print "Erreur lors de la désinscription de la compétition : " . $e->getMessage();
+        return false;
+    }
+}
+
+// Fonction pour vérifier si un utilisateur est inscrit à une compétition
+function isUserRegisteredToCompetition($competition_id, $user_id) {
+    try {
+        $conn = DBconnection();
+        $query = "SELECT * FROM inscriptioncompetition WHERE idCompetition = :competition_id AND utilisateurs_id = :user_id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':competition_id', $competition_id, PDO::PARAM_INT);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $conn = null; // Fermer la connexion
+        return $result ? true : false;
+    } catch (PDOException $e) {
+        print "Erreur lors de la vérification de l'inscription à la compétition : " . $e->getMessage();
         return false;
     }
 }

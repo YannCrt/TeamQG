@@ -6,6 +6,8 @@ function controleurPrincipal($action){
     $Actions["home"]="home.php";
 
     $Actions["competitions"]="competitions.php";
+    $Actions["desinscriptioncompetition"]="desinscriptioncompetition.php";
+    $Actions["inscriptioncompetition"]="inscriptioncompetition.php";
     $Actions["signin_competitions"]="signin_competitions.php";
     $Actions["confirmation"] = "confirmation.php";
     $Actions["gererUtilisateurs"] = "gererUtilisateurs.php";
@@ -18,6 +20,8 @@ function controleurPrincipal($action){
     $Actions["updProfil"] = "updProfil.php";
     $Actions['monProfil'] = "monProfil.php";
     $Actions['events'] = "events.php";
+    $Actions["desinscriptionevent"]="desinscriptionevent.php";
+    $Actions["inscriptionevent"]="inscriptionevent.php";
     $Actions['maintenance'] = "maintenance.php";
     $Actions['newsletter'] = "newsletter.php";
 
