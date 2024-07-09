@@ -77,3 +77,7 @@ div.credits_division{
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
+
+.no-event {
+  margin-left: 565px;
+}

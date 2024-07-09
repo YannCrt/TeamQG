@@ -4,7 +4,7 @@ footer {
   background:  linear-gradient(59deg, #420add, #6b39f5);
   color: white;
   margin-top: 200px;
-  
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5); /* Ombre noire */
 }
 
 footer a {

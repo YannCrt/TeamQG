@@ -1,6 +1,6 @@
 <body>
 
-
+<div class="circle"></div>
 
 <div class = 'home'>
 <?php include "$racine/view/homevideo.php";?>
@@ -16,3 +16,4 @@
 
           </div>
 </div>
+<script type='text/javascript' src="../model/cursor.js"></script>

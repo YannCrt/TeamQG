@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     height: 100%;
     padding: 0;
+    cursor: url(../assets/cursor2.png), pointer;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
 .header {
     background: -webkit-linear-gradient(59deg, #420add, #7a4cf8);
     background:  linear-gradient(59deg, #420add, #6b39f5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Ombre noire vers le haut */
 }
 
 .navigation {

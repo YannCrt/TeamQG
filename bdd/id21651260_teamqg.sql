@@ -40,9 +40,9 @@ INSERT INTO `utilisateurs` (id, prenom, nom, pseudo, mdp, datenaissance, mail, e
 (2, 'Motoko', 'ARAKI', 'MotokoAraki', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', '2002-08-15', 'MotokoAraki@gmail.com', 1),
 (3, 'Jeremy', 'Fortunat', 'JeremyFortunat', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'JeremyFortunat@gmail.com', 1),
 (4, 'Ruth', 'Wandja', 'Ruth', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'Ruth@gmail.com', 1),
-(5, 'pasadmin', 'pasadmin', 'pasadmin', '$2y$10$MAWqqMMWDaZvucKJdlPfkeSM3qKkFkJ1BiXaG/pxl7nhCeaSNOB0.', NULL, 'pasadmin@pasadmin.com');
+(5, 'pasadmin', 'pasadmin', 'pasadmin', '$2y$10$MAWqqMMWDaZvucKJdlPfkeSM3qKkFkJ1BiXaG/pxl7nhCeaSNOB0.', NULL, 'pasadmin@pasadmin.com',1);
 
-Alter table utilisateurs set nom = wandja where id = 4;
+-- Alter table utilisateurs set nom = wandja where id = 4;
 
 CREATE TABLE video (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

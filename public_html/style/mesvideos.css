@@ -61,7 +61,7 @@
     text-decoration: none;
     cursor: pointer;
     border: 2px;
-    border-radius: 4px;
+    border-radius: 4px;    
 }
 
 /* Styles pour la vidéo d'accueil */
@@ -70,13 +70,13 @@
 }
 
 .btn-addvideo {
-    margin-left: 89.5%;
+    margin-left: 650px;
 }
 
 .novideo {
     margin: 100px;
     margin-bottom: 100px;
-    margin-left: 45%
+    margin-left: 650px;
 }
 
 /* Style général pour le container */
