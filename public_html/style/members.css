@@ -201,7 +201,7 @@ h2.gest {
 
 
 .selec_util {
-  margin-left: 645px;
+  margin-left: 850px;
   margin-top: 20px;
 }
 
@@ -212,7 +212,7 @@ h2.gest {
 }
 
 .search_pseudo_form {
-  margin-left: 600px;
+  margin-left: 800px;
   flex-direction: column;
   align-items: center;
   max-width: 300px; /* Définir une largeur maximale pour le formulaire */
