@@ -69,3 +69,7 @@ h2.ring-inscription {
 .container-inscription{
   margin-top: 30px;
 }
+
+.error-message { color: red; 
+  margin-top: 30px;
+}

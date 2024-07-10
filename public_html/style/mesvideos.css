@@ -69,14 +69,31 @@
     margin-bottom: 20px;
 }
 
+.btn-addvideo-container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0; /* Vous pouvez ajuster cette marge selon vos besoins */
+}
+
 .btn-addvideo {
-    margin-left: 1100px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 40px;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-addvideo a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .novideo {
     margin: 100px;
     margin-bottom: 100px;
-    margin-left: 650px;
+    margin-left: 835px;
 }
 
 /* Style général pour le container */
@@ -84,7 +101,7 @@
     max-width: 600px;
     margin: 60px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #fff;     
     border: 1px solid #000;
     color: #000;
     border-radius: 1.2rem;
@@ -235,4 +252,34 @@ textarea#description {
     word-wrap: normal;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+/* Aligner les boutons côte à côte */
+.btn-video-group {
+    display: flex;
+    gap: 10px; /* Espace entre les boutons */
+    margin-top: 10px;
+}
+
+/* Styles pour les boutons individuels dans le groupe */
+.btn-video-inline {
+    padding: 8px 16px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 4px;    
+    background-color: #000;
+    color: #fff;
+}
+
+.btn-video-inline a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Effet de survol pour les boutons */
+.btn-video-inline:hover {
+    background-color: #444;
 }

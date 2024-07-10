@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Inclure le fichier CSS pour le formulaire -->
     <title>Inscription</title>
 </head>
 <body>
@@ -18,7 +17,7 @@
         <i></i>
         <div class="login">
             <h2>Inscription</h2>
-            <form action="./?action=inscription" method="POST">
+            <form action="./?action=inscription" method="POST" onsubmit="return validateForm()">
                 <div class="inputBx">
                     <input type="text" id="prenom" name="prenom" autocomplete="off" placeholder="Prénom" required>
                 </div>
@@ -41,6 +40,7 @@
                 <div class="inputBx">
                     <input id="inscrire" class="btn register-btn" type="submit" name="envoyer" value="S'inscrire">
                 </div>
+                <p class="error-message"></p>
             </form>
            
             <div class="links" id="link-inscription">
@@ -49,7 +49,8 @@
         </div>
     </div>
 </div>
-<script src="https://vjs.zencdn.net/7.11.4/video.js"></script>
+
+<script type='text/javascript' src='../model/mdp.js'></script>
 
 </body>
 </html>

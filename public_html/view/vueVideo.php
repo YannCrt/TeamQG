@@ -45,17 +45,18 @@ include_once "$racine/view/head.php";
                 </video>
             <?php endif; ?>
             <?php if (isset($is_admin) && $is_admin): ?>
-            <div class="btn-videos">
+                <div class="btn-video-group">
                 <!-- Formulaire de suppression -->
                 <form action="./?action=suppressionVideo" method="POST">
                     <input type="hidden" name="id" value="<?php echo $video['id']; ?>">
-                    <button type="submit" class="btn btn-primary btn-video" name="SupprimerVideo" value="Supprimer">Supprimer</button>
+                    <button type="submit" class="btn-video-inline" name="SupprimerVideo" value="Supprimer">Supprimer</button>
                 </form>
                 <!-- Lien pour modifier la vidéo -->
-                <button class="btn btn-primary btn-video"><a href="./?action=updVideo&id=<?php echo $video['id']; ?>">Modifier</a></button>
-            </div>
+                <button class="btn-video-inline"><a href="./?action=updVideo&id=<?php echo $video['id']; ?>">Modifier</a></button>
+            
             <?php endif; ?>
-            <button class="btn btn-primary btn-video"><a href="data:video/mp4;base64,<?php echo base64_encode($video['fichier']); ?>" download="<?php echo htmlspecialchars($video['titre']); ?>.mp4">Télécharger</a></button>
+            <button class="btn-video-inline"><a href="data:video/mp4;base64,<?php echo base64_encode($video['fichier']); ?>" download="<?php echo htmlspecialchars($video['titre']); ?>.mp4">Télécharger</a></button>
+            </div>
         </li>
     <?php endforeach; ?>
 </ul>
@@ -63,8 +64,12 @@ include_once "$racine/view/head.php";
     <?php else: ?>
         <p class="novideo">Aucune vidéo trouvée.</p>
     <?php endif; ?>
-
-    <?php if (isset($is_admin) && $is_admin): ?>
-        <button class="btn btn-primary btn-addvideo"><a href="./?action=addVideo">Ajouter une vidéo</a></button>
-    <?php endif; ?>
+ 
 </div>
+    <?php if (isset($is_admin) && $is_admin): ?>
+        <div class="btn-addvideo-container">
+        <button class="btn btn-primary btn-addvideo">
+            <a href="./?action=addVideo">Ajouter une vidéo</a>
+        </button>
+    </div>
+        <?php endif; ?>    

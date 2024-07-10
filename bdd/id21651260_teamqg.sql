@@ -42,7 +42,7 @@ INSERT INTO `utilisateurs` (id, prenom, nom, pseudo, mdp, datenaissance, mail, e
 (4, 'Ruth', 'Wandja', 'Ruth', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'Ruth@gmail.com', 1),
 (5, 'pasadmin', 'pasadmin', 'pasadmin', '$2y$10$MAWqqMMWDaZvucKJdlPfkeSM3qKkFkJ1BiXaG/pxl7nhCeaSNOB0.', NULL, 'pasadmin@pasadmin.com',1);
 
--- Alter table utilisateurs set nom = wandja where id = 4;
+-- mdp : Erwan, Motoko, Jeremy, Ruth = admin     pasadmin = pasadmin
 
 CREATE TABLE video (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
