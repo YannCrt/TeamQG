@@ -52,9 +52,10 @@ include_once "$racine/view/head.php";
                         </form>
                         <!-- Lien pour modifier la vidéo -->
                         <button class="btn-video-inline"><a href="./?action=updVideo&id=<?php echo $video['id']; ?>">Modifier</a></button>
-                    </div>
+                   
                 <?php endif; ?>
                 <button class="btn-video-inline"><a href="data:video/mp4;base64,<?php echo base64_encode($video['fichier']); ?>" download="<?php echo htmlspecialchars($video['titre']); ?>.mp4">Télécharger</a></button>
+                </div>
             </li>
         <?php endforeach; ?>
     </ul>

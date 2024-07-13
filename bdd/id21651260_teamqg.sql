@@ -18,29 +18,29 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `id21651260_teamqg`
+-- Base de données : id21651260_teamqg
 --
 
-CREATE DATABASE IF NOT EXISTS `teamqg` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `teamqg`;
+CREATE DATABASE IF NOT EXISTS teamqg DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE teamqg;
 
 CREATE TABLE utilisateurs (
    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
    prenom VARCHAR(50) NOT NULL,
    nom VARCHAR(50) NOT NULL,
-   pseudo VARCHAR(50) NOT NULL DEFAULT '',
+   pseudo VARCHAR(50) UNIQUE NOT NULL DEFAULT '',
    mdp VARCHAR(255) NOT NULL DEFAULT '',
    datenaissance DATE DEFAULT NULL,
-   mail VARCHAR(50) NOT NULL,
+   mail VARCHAR(50) UNIQUE NOT NULL,
    est_admin BOOLEAN NOT NULL DEFAULT FALSE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `utilisateurs` (id, prenom, nom, pseudo, mdp, datenaissance, mail, est_admin) VALUES
+INSERT INTO utilisateurs (id, prenom, nom, pseudo, mdp, datenaissance, mail, est_admin) VALUES
 (1, 'Erwan', 'Schahmaneche', 'Erwanschahmaneche', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'erwanschahmaneche@gmail.com', 1),
 (2, 'Motoko', 'ARAKI', 'MotokoAraki', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', '2002-08-15', 'MotokoAraki@gmail.com', 1),
 (3, 'Jeremy', 'Fortunat', 'JeremyFortunat', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'JeremyFortunat@gmail.com', 1),
 (4, 'Ruth', 'Wandja', 'Ruth', '$2y$10$Da15871H88lYB9QYzZVXJ.d4GHzLM31okt5Y38ZI5JjLqERHYmCJS', NULL, 'Ruth@gmail.com', 1),
-(5, 'pasadmin', 'pasadmin', 'pasadmin', '$2y$10$MAWqqMMWDaZvucKJdlPfkeSM3qKkFkJ1BiXaG/pxl7nhCeaSNOB0.', NULL, 'pasadmin@pasadmin.com',1);
+(5, 'pasadmin', 'pasadmin', 'pasadmin', '$2y$10$MAWqqMMWDaZvucKJdlPfkeSM3qKkFkJ1BiXaG/pxl7nhCeaSNOB0.', NULL, 'pasadmin@pasadmin.com', 0);
 
 -- mdp : Erwan, Motoko, Jeremy, Ruth = admin     pasadmin = pasadmin
 
@@ -92,7 +92,7 @@ CREATE TABLE events (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO events (idEvent, nom, lieu, date_event, description, image_path, informations) VALUES
-(1, 'Inside Turgot', 'Dans le Chapiteau Rajganawak à Saint-Denis !', '2023-12-27', 'Team QG présente « INSIDE TURGOT ».\r\n\r\nUn projet qui vise à mettre en avant les visions, les identités et les histoires qui font de Turgot une expérience si précieuse.\r\nComment ? À travers des stages de danse d’une journée avec des danseurs qui ont marqué l’histoire de cette section Hip-Hop.\r\n\r\nPour cette édition autour de la House Dance, les intervenants seront: Sephora «  Rvndom » , Habib, Jey Udeep et Shell Udeep. Tous les quatre sont des acteurs importants de l’histoire de la House Dance à Turgot et vont nous partager leur vibe le mercredi 27 décembre ( profitez de la vidéo en attendant ).\r\n\r\nOù ? Dans le Chapiteau Rajganawak à Saint-Denis !\r\n\r\nAu programme: Discussions, échanges, workshop, repas, DANSE.\r\n\r\nOn vous attend nombreux !', 'assets/logo.png', '<input required type=\'radio\' id=\'var1\' name=\'registration[infos]\' value=\'1\' /><label>Etudiant à Turgot</label><br><input required type=\'radio\' id=\'var2\' name=\'registration[infos]\' value=\'2\' /><label>A étudié à Turgot</label><br><input required type=\'radio\' id=\'var3\' name=\'registration[infos]\' value=\'3\' /><label>Aucun des deux</label>');
+(1, 'Inside Turgot', 'Dans le Chapiteau Rajganawak à Saint-Denis !', '2023-12-27', 'Team QG présente « INSIDE TURGOT ».\r\n\r\nUn projet qui vise à mettre en avant les visions, les identités et les histoires qui font de Turgot une expérience si précieuse.\r\nComment ? À travers des stages de danse d’une journée avec des danseurs qui ont marqué l’histoire de cette section Hip-Hop.\r\n\r\nPour cette édition autour de la House Dance, les intervenants seront: Sephora «  Rvndom » , Habib, Jey Udeep et Shell Udeep. Tous les quatre sont des acteurs importants de l’histoire de la House Dance à Turgot et vont nous partager leur vibe le mercredi 27 décembre ( profitez de la vidéo en attendant ).\r\n\r\nOù ? Dans le Chapiteau Rajganawak à Saint-Denis !\r\n\r\nAu programme: Discussions, échanges, workshop, repas, DANSE.\r\n\r\nOn vous attend nombreux !', 'assets/logo.png', '<input required type=\'radio\' id=\'var1\' name=\'registration[infos]\' value=\'1\' /><label>Etudiant à Turgot</label><br><input required type=\'radio\' id=\'var2\' name=\'registration[infos]\' value=\'2\' /><label>A étudié à Turgot</label><br><input required type=\'radio\' id=\'var3\' name=\'registration[infos]\' value=\'3\' /><label>Aucun des deux</label>'),
 (2, 'Festival Hip-Hop Fusion', 'Parc de la Villette, Paris', '2024-09-05', 'Festival annuel célébrant la culture hip-hop avec des performances, des ateliers et des concerts.', 'assets/festival_hiphop.jpg', 'Découvrez la diversité du hip-hop à travers cet événement unique !'),
 (3, 'Urban Groove Convention', 'Palais des Congrès, Marseille', '2024-10-10', 'Convention internationale réunissant les passionnés de danse urbaine pour des workshops, des battles et des conférences.', 'assets/urban_groove.jpg', 'Rencontrez des danseurs renommés et améliorez vos compétences !');
 
@@ -150,7 +150,8 @@ INSERT INTO newsletter (id, nom, prenom, email) VALUES
 
 CREATE TABLE socialpost (
   id VARCHAR(150) NOT NULL,
-  origin VARCHAR(40) NOT NULL
+  origin VARCHAR(40) NOT NULL,
+  PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 INSERT INTO socialpost (id, origin) VALUES
